@@ -54,7 +54,7 @@ kamers = {
     B : "RotsmuurInOosten",
     C : "MeisjeZuiden",
     D : "RivierMetBrug",
-    "items" : ["EHBO-kit"],
+    "items" : ["ehbo-kit"],
     "benodigdheden" : "kompas",
     "acties" : "g/d (get/drop item) \nu (use) \nh (health) \ni (inventory) \n? (help) \nq (quit) \n/ (opties)",
     "dood" : "no",
@@ -63,8 +63,8 @@ kamers = {
   "MeisjeZuiden" :{
     "titel" : "Meisje",
     "doodsbeschrijving" : "Je komt op een open plaats en ziet het meisje nog net verdwijnen tussen de bosjes. Opeens komt er uit diezelfde bosjes een groot gruwelijk monster (details nog uitwerken). Het monster verslindt je met huid en haar en je gaat dood.",
-    "beschrijving" : "Je komt op een open plaats en ziet het meisje nog net verdwijnen tussen de bosjes. \nOpeens komt er uit diezelfde bosjes een groot gruwelijk monster (details nog uitwerken). \nJe weet net op tijd weg te rennen en komt weer uit bij het rivierpad",
-    A : "RivierpadNaarOosten",
+    "beschrijving" : "Je komt op een open plaats en ziet het meisje nog net verdwijnen tussen de bosjes. \nOpeens komt er uit diezelfde bosjes een groot gruwelijk monster (details nog uitwerken). \nJe weet net op tijd weg te rennen en komt weer uit bij het rivierpad \n",
+    A : "StenenPlein",
     "benodigdheden" : "kompas",
     "dood" : "yes",
     "win" : "no"
