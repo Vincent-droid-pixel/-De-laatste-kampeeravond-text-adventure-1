@@ -32,8 +32,10 @@ kamers = {
 
 #inventory laten zien
 def inventory():
+  os.system('clear')
+  print ("dit heb je op dit moment bij je:")
   print (playerinventory)
-  time.sleep(10)
+  time.sleep(3)
   game("RivierMetBrug")
 
 #de gameloop
