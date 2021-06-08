@@ -5,7 +5,8 @@ import time
 #TO-do
 # - Get/Drop item systeem
 # - overige kamers toevoegen in data
-
+# - forloops weghalen
+# - bugs fixen
 
 # Kamers #
 Titel = "titel"
@@ -37,13 +38,13 @@ kamers = {
   "RivierMetBrug" : {
     "titel" : "een rivier met een brug.",
     "beschrijving" : "Het is een gammele houten brug die naar het noorden over de rivier loopt. Je weet niet of je er eigenlijk wel overheen kunt lopen zonder dat hij doorbreekt. Je ziet ook nog een pad langs het water stroomopwaarts richting het oosten lopen.",
-    "richtingen" : ["A: De brug naar het noorden", "B: Het rivierpad naar het oosten"],
+    "richtingen" : "1: De brug naar het noorden \n2: Het rivierpad naar het oosten",
     A : "BrugNaarNoorden",
     B : "RivierpadNaarOosten",
     C : "RivierMetBrug",
     D : "RivierMetBrug",
-    "items" : "X",
-    "acties" : ["g (get item)", "d (drop item)", "h (health)", "i (inventory)", "? (help)", "q (quit)"],
+    "items" : [""],
+    "acties" : "d (drop item) \nh (health) \ni (inventory) \n? (help) \nq (quit)",
     "dood" : "no",
     "win" : "no"
   },
@@ -58,9 +59,13 @@ kamers = {
   "RivierpadNaarOosten" :{
     "titel" : "Het rivierpad naar het Oosten",
     "beschrijving" : "Je loopt langs het pad en komt een klein meisje tegen in witte gewaden. Het lijkt bijna alsof ze gloeit zo licht zijn haar gewaden. Zodra het meisje je ziet loopt ze weg richting het zuiden. Je twijfelt of je haar zal volgen of dat je het rivier pad moet volgen.",
-    "richtingen" : "z, o",
+    "richtingen" : ["A: Verder naar het oosten", "B: Meisje naar zuiden", "C: De rivier bij de brug"],
+    A : "VerderNaarOosten",
+    B : "MeisjeZuiden",
+    C : "RivierMetBrug",
+    D : "RivierpadNaarOosten",
     "items" : "",
-    "acties" : ["g (get item)", "d (drop item)", "h (health)", "i (inventory)", "? (help)", "q (quit)"],
+    "acties" : "g/d (get/drop item), \nh (health), \ni (inventory), \n? (help), \nq (quit)",
     "dood" : "no",
     "win" : "no"
   }
@@ -80,7 +85,43 @@ def health():
   time.sleep(5)
   print_location()
 
+#get item functie 
+def get():
+  os.system("clear")
+  print("In deze kamer liggen de volgende items:")
+  print (kamers[speler.location][Items])
+  print("Welk item wil je oppakken? (of typ [terug] als je terug wil gaan)")
+  choice = input("")
+  if choice.lower() == "":
+    kamers[speler.location][Items].remove()
+    speler.inventory.append()
+  elif choice.lower == "terug":
+    print_location()
+  else:
+    os.system("clear")
+    print("vul een item in dat aanwezig is in de kamer!")
+    time.sleep(3)
+    get()
 
+#drop item filter
+def drop():
+  os.system("clear")
+  print("Je hebt de volgende items bij je:")
+  print(speler.inventory)
+  print("welk item wil je droppen?")
+  choice = input("")
+  if choice.lower() == "kompas":
+    os.system("clear")
+    print("=" * 40)
+    print("Nadat je het kompas hebt weggegooid verdwaal je in het bos en niemand heeft je daarna ooit nog gevonden.")
+    print("=" * 40)
+    time.sleep(4)
+    dood()
+  else:
+    os.system("clear")
+    print("vul een item in dat je bij je hebt!")
+    time.sleep(2.5)
+    drop()
 
 
 ###DE GAME-LOOP###
@@ -108,12 +149,11 @@ def print_location():
       print(i)
     print("~" * 30)
     print("je kunt de volgende dingen doen:")
-    for (a) in (ACTIES):
-      print(a)
+    print(kamers[speler.location][Acties])
     print("~" * 30)
     print("je kunt de volgende richtingen op:")
-    for (x) in (RICHTINGEN):
-      print (x)
+    #for (x) in (RICHTINGEN):
+    print (kamers[speler.location][Richtingen])
     print("~" * 30)
     keuze()
   elif kamers[speler.location][Dood] == ("yes") and speler.health == "100%":
@@ -142,32 +182,36 @@ def print_location():
 def keuze():
   print ('Wat wil je doen?')
   option = input('')
-  if option.lower() == "a":
+  if option == "1":
     move_dest = kamers[speler.location][A]
     move_player(move_dest)
-  elif option.lower() == "b":
+  elif option == "2":
     move_dest = kamers[speler.location][B]
     move_player(move_dest)
-  elif option.lower() == "c":
+  elif option == "3":
     move_dest = kamers[speler.location][C]
     move_player(move_dest)
-  elif option.lower() == "d":
+  elif option == "4":
     move_dest = kamers[speler.location][D]
     move_player(move_dest)
   elif option.lower() == "?":
     help_in_game()
   elif option.lower() ==  "i":
       inventory()
-    #elif option.lower() == "g":
-    #  getitem()
-    #elif option.lower() == "d":
-    #  dropitem()
+  elif option.lower() == "g":
+      get()
+  elif option.lower() == "d":
+      drop()
   elif option.lower() == "h":
       health()
   elif option.lower() == "q":
       quit()
   else:
-    print("Vul aub een geldig antwoord in")
+    os.system('clear')
+    print("Vul aub een geldig antwoord in!")
+    time.sleep(1.5)
+    os.system('clear')
+    print_location()
     keuze()
 
 #========================================
@@ -177,7 +221,7 @@ def keuze():
 #dood-menu
 def dood():
   os.system('clear')
-  animation = ["wil","wil je", "wil je nog", "wil je nog een", "wil je nog een keer", "wil je nog een keer spelen?"]
+  animation = ["Je", "Je bent", "Je bent dood.","Je bent dood. Wil","Je bent dood. Wil je", "Je bent dood. Wil je nog", "Je bent dood. Wil je nog een", "Je bent dood. Wil je nog een keer", "Je bent dood. Wil je nog een keer spelen?"]
   for x in range(len(animation)):
     time.sleep(0.5)
     sys.stdout.write("\r" + animation[x % len(animation)])
@@ -212,7 +256,7 @@ def quit():
 #intro-menu
 def intro():
   print("====================================================== \nJe bent gezellig met vrienden aan het kamperen in het bos. \nHelaas kon je niet slapen. \nJe dacht: 'laat ik even een boswandeling maken, zodat ik beter kan slapen.' \nHet enige wat je meeneemt is een kompas. \nNa een kwartier te hebben gelopen kom je opeens tot het besef dat je niet meer weet waar je bent! \nJe denkt bij jezelf: ‘ik moet mijn vrienden terugvinden!’ \n======================================================")
-  choice = input(""" Schrijf ok als je verder wil gaan: """)
+  choice = input(""" Schrijf [ok] als je verder wil gaan: """)
   if choice.lower() == "ok":
     os.system('clear')
     print_location()
@@ -234,7 +278,7 @@ def NaamInvullen():
   os.system('clear')
   intro()
   
-#help-menu
+#help-menu voor in een kamer
 def help_in_game():
   os.system('clear')
   print("============================================= \nJe hebt verschillende controls in deze text adventure. \nTen eerste kan je met help [?] dit menu zien en met quit [q] kan je stoppen. \nVerder kun je met ‘get item [g]’ en ‘drop item [d]’ items oppakken en laten vallen / neerleggen. \nDaarnaast kan je met ‘inventory [i]’ alle items zien die je hebt opgepakt. \nOok kan je nog met de gegeven windrichtingen (Noord [n], Oost [o], Zuid [z], West [w]) bij elk gebied, naar het volgende gebied gaan. \nTenslotte kan je met ‘health [h]’ je health zien. \nAl deze controls kan je tijdens het gehele spel gebruiken. \n=============================================")
@@ -247,6 +291,7 @@ def help_in_game():
     print("============================================= \n|       vul een geldig antwoord in!!!       |")
     help_in_game()
 
+#help-menu voor in het hoofdmenu
 def help():
   print("============================================= \nJe hebt verschillende controls in deze text adventure. \nTen eerste kan je met help [?] dit menu zien en met quit [q] kan je stoppen. \nVerder kun je met ‘get item [g]’ en ‘drop item [d]’ items oppakken en laten vallen / neerleggen. \nDaarnaast kan je met ‘inventory [i]’ alle items zien die je hebt opgepakt. \nOok kan je nog met de gegeven windrichtingen (Noord [n], Oost [o], Zuid [z], West [w]) bij elk gebied, naar het volgende gebied gaan. \nTenslotte kan je met ‘health [h]’ je health zien. \nAl deze controls kan je tijdens het gehele spel gebruiken. \n=============================================")
   choice = input(""" Typ 'menu' als je terug naar het menu wil gaan: """)
@@ -295,3 +340,11 @@ def hoofdmenu():
                                         
 
 hoofdmenu()
+
+class speler:
+    def __init__(self):
+        self.name = ''
+        self.health = "100%"   
+        self.inventory = ["kompas"]      
+        self.location = 'RivierMetBrug'
+speler = speler()
