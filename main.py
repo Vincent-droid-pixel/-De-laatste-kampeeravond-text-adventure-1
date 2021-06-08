@@ -1,13 +1,20 @@
 import os
 import sys
+import time
+
+items = ["appel"]
+
+#inventory
+playerinventory = ["kompas"]
 
 #kamers
 kamers = {
   "RivierMetBrug" : {
     "titel" : "een rivier met een brug.",
     "beschrijving" : "Het is een gammele houten brug die naar het noorden over de rivier loopt. Je weet niet of je er eigenlijk wel overheen kunt lopen zonder dat hij doorbreekt. Je ziet ook nog een pad langs het water stroomopwaarts richting het oosten lopen.",
-    "windrichtingen" : "n, o",
-    "acties" : "g (get item), d (drop item), h (health), i (inventory)"
+    "windrichtingen" : ["noorden", "oosten"],
+    "aangrenzende gebieden" : ["BrugNaarNoorden", "RivierpadNaarOosten"],
+    "acties" : ["g (get item)", "d (drop item)", "h (health)", "i (inventory)"],
   },
   "BrugNaarNoorden" : {
     "titel" : "de brug",
@@ -19,9 +26,15 @@ kamers = {
     "titel" : "Het rivierpad naar het Oosten",
     "beschrijving" : "Je loopt langs het pad en komt een klein meisje tegen in witte gewaden. Het lijkt bijna alsof ze gloeit zo licht zijn haar gewaden. Zodra het meisje je ziet loopt ze weg richting het zuiden. Je twijfelt of je haar zal volgen of dat je het rivier pad moet volgen.",
     "windrichtingen" : "z, o",
-    "acties" : "g (get item), d (drop item), h (health), i (inventory)"
+    "acties" : ["g (get item)", "d (drop item)", "h (health)", "i (inventory)"]
   }
 }
+
+#inventory laten zien
+def inventory():
+  print (playerinventory)
+  time.sleep(10)
+  game("RivierMetBrug")
 
 #de gameloop
 def game(gebied):
@@ -39,16 +52,45 @@ def game(gebied):
   print(f"je bent bij {titel}")
   print(beschrijving)
   print("=============================================")
-  print("de windrichtingen waar je heen kan gaan zijn")
-  print(windrichtingen)
+  print("de windrichtingen waar je heen kan gaan zijn:")
+  for (i, w) in enumerate(windrichtingen):
+    print (i+1, w)
   print("~~~~~~~~~~~~~~~~~~~~~~~~~~~~")
-  print("de acties die je kan doen zijn:")
-  print(acties)
+  print("de acties die je kunt uitvoeren zijn:")
+  for (a) in (acties):
+    print(a)
   print("~~~~~~~~~~~~~~~~~~~~~~~~~~~~")
-  print("typ wat je wil doen: ")
+  #choice = int(input('Typ je keuze:'))
+  #(gebied) = "aangrenzende gebieden"[choice - 1]
+  choice = (input("typ wat je wil doen: "))
+  if choice ==  "i":
+    inventory()
+  #elif choice == "g":
+  #  getitem()
+  #elif choice == "d":
+  #  dropitem()
+  #elif choice == "h":
+  #  health()
+  
 
 
 
+#intro#
+def intro():
+  print("======================================================")
+  print("Je bent gezellig met vrienden aan het kamperen in het bos. Helaas kon je niet slapen. Je dacht: 'laat ik even een boswandeling maken, zodat ik beter kan slapen.' Het enige wat je meeneemt is een kompas.")
+  print("")
+  print("======================================================")
+  choice = input(""" Schrijf ok als je verder wil gaan: """)
+  if choice.lower() == "ok":
+    os.system('clear')
+    #zorgt dat de speler naam kan invullen
+    game("RivierMetBrug")
+  else:
+    os.system('clear')
+    print("=============================================")
+    print("|       vul een geldig antwoord in!!!       |")
+    intro()
 
 #naam invullen#
 def NaamInvullen():
@@ -69,9 +111,11 @@ def NaamInvullen():
 
   choice = input(""" Typ een willekeurige letter om verder te gaan: """)
   if choice == "":
-    game("RivierMetBrug")
+    os.system('clear')
+    intro()
   else:
-    game("RivierMetBrug")
+    os.system('clear')
+    intro()
 
 
 class speler:
@@ -81,30 +125,15 @@ class speler:
 speler = speler()
 
 
-#intro#
-def intro():
-  print("======================================================")
-  print("Je bent gezellig met vrienden aan het kamperen in het bos. Helaas kon je niet slapen. Je dacht: 'laat ik even een boswandeling maken, zodat ik beter kan slapen.' Het enige wat je meeneemt is een kompas.")
-  print("")
-  print("======================================================")
-  choice = input(""" Schrijf OK als je verder wil gaan: """)
-  if choice == "OK":
-    os.system('clear')
-    #zorgt dat de speler naam kan invullen
-    NaamInvullen()
-  else:
-    os.system('clear')
-    print("=============================================")
-    print("|       vul een geldig antwoord in!!!       |")
-    intro()
+
 
 #helpmenu
 def help():
   print("=============================================")
   print("Je hebt verschillende controls in deze text adventure. Zo kun je met ‘get item [g]’ en ‘drop item [d]’ items oppakken en laten vallen / neerleggen. Verder kan je met ‘inventory [i]’ alle items zien die je hebt opgepakt. Ook kan je nog met de gegeven windrichtingen (Noord [n], Oost [o], Zuid [z], West [w]) bij elk gebied, naar het volgende gebied gaan. (Ten slotte kan je met ‘health [h]’ je health zien.) Al deze controls kan je tijdens het gehele spel gebruiken.")
   print("=============================================")
-  choice = input(""" Typ 'Menu' als je terug naar het menu wil gaan: """)
-  if choice == "Menu":
+  choice = input(""" Typ 'menu' als je terug naar het menu wil gaan: """)
+  if choice.lower() == "Menu":
     os.system('clear')
     hoofdmenu()
   else:
@@ -117,18 +146,11 @@ def help():
 def stop():
   print("=============================================")
   choice = input("""     Weet je zeker dat je wil stoppen?  """)
-  if choice == "Ja":
+  if choice.lower() == "ja":
     os.system('clear')
     print("bedankt voor het spelen!!!")
     sys.exit
-  elif choice == "ja":
-    os.system('clear')
-    print("bedankt voor het spelen!!!")
-    sys.exit
-  elif choice == "Nee":
-    os.system('clear')
-    hoofdmenu()
-  elif choice == "nee":
+  elif choice.lower() == "nee":
     os.system('clear')
     hoofdmenu()
   else:
@@ -150,25 +172,19 @@ def hoofdmenu():
   print("|     ----------------------------------    |")
   print("|                 Kies uit:                 |")
   choice = input("""|                                           |
-|                  Start                    |
-|                  Stop                     |
-|                  Help                     |  
+|                  start                    |
+|                  stop                     |
+|                  help                     |  
 =============================================               
            Vul je keuze in:  """)   
   #keuzes van het hoofdmenu#
-  if choice == "Start":
+  if choice.lower() == "start":
     os.system('clear')
-    intro()
-  elif choice == "start":
-    os.system('clear')
-    intro()
-  elif choice == "Stop":
+    NaamInvullen()
+  elif choice.lower() == "stop":
     os.system('clear')
     stop()
-  elif choice == "stop":
-    os.system('clear')
-    stop()
-  elif choice == "help":
+  elif choice.lower() == "help":
     os.system('clear')
     help()
   else:
