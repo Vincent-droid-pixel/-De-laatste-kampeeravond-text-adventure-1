@@ -8,7 +8,8 @@ from Gebieden import kamers
 # - overige kamers toevoegen in data
 # - verhaal afmaken
 # - bugs fixen
-# - als je 2e keer in kamer komt een kortere beschrijving printen
+# - help menu aanpassen
+# - bij usen ook beschikbare items laten zien
 
 while True:
 
@@ -79,11 +80,13 @@ while True:
   D = "d"
   E = "e"
 
+#spelerinformatie
   class speler:
       def __init__(self):
           self.name = ''
           self.health = "100%"   
           self.inventory = ["kompas"]      
+          self.usable = []
           self.location = 'RivierMetBrug'
           self.typemachine = 'false'
           self.bezochteKamers = [""]
@@ -108,7 +111,8 @@ while True:
   def get():
     os.system("clear")
     print("In deze kamer liggen de volgende items:")
-    print (kamers[speler.location][Items])
+    for i in (kamers[speler.location][Items]):
+      print(i)
     print("Welk item wil je oppakken? (of typ [terug] als je terug wil gaan)")
     choice = input("")
     if choice.lower() == "machete":
@@ -123,6 +127,7 @@ while True:
     elif choice.lower() == "ehbo-kit":
       kamers[speler.location][Items].remove("EHBO-kit")
       speler.inventory.append("EHBO-kit")
+      speler.usable.append("EHBO-kit")
       print("je hebt het item opgepakt. Druk op [enter] om verder te gaan")
       choice = input('')
       if choice.lower() == "":
@@ -141,7 +146,8 @@ while True:
   def drop():
     os.system("clear")
     print("Je hebt de volgende items bij je:")
-    print(speler.inventory)
+    for i in (speler.inventory):
+      print(i)
     print("welk item wil je droppen?(of typ [terug] om terug te gaan)")
     choice = input("")
     if choice.lower() == "kompas":
@@ -168,6 +174,7 @@ while True:
     elif choice.lower() == "ehbo-kit":
       kamers[speler.location][Items].append("EHBO-kit")
       speler.inventory.remove("EHBO-kit")
+      speler.usable.remove("EHBO-kit")
       print("je hebt het item gedropt. Druk op [enter] om verder te gaan")
       choice = input('')
       if choice.lower() == "":
@@ -185,14 +192,23 @@ while True:
 
   #use item functie#
   def use():
-    print("Je hebt de volgende items bij je:")
+    os.system('clear')
+    print("Je kunt de volgende items die je bij je hebt gebruiken:")
+    for u in [speler.usable]:
+      print (u)
     print("Welk item wil je gebruiken? (of typ terug om terug te gaan)")
     choice = input()
     if choice.lower() == "ehbo-kit":
       speler.inventory.remove('EHBO-kit')
       print("Je hebt de EHBO-kit gebruikt.")
       speler.health = "100%"
-      print_location()
+      print("Je hebt het item gebruikt. Je health is weer 100%. Druk op [enter] om door te gaan")
+      choice = input("")
+      if choice.lower() == "":
+        print_location()
+      else:
+        print_location()
+
     elif choice.lower() == "terug":
       print_location()
     else:
@@ -206,69 +222,91 @@ while True:
 
   ###DE GAME-LOOP###
 
- # print locatie waarbij rekening wordt gehouden of er bij opties is aangezet dat er een typemachine animatie is of niet
+ # print locatie waarbij rekening wordt gehouden of er bij opties is aangezet dat er een typemachine animatie is of niet. 
+ #En of een speler al op een locatie is geweest. 
+ #En of een speler er dood kan gaan of er kan winnen.
   def print_location():
+    #if-statement kijk of speler dood kan gaan in de kamer
     if kamers[speler.location][Dood] == ("no") and kamers[speler.location][Win] == ("no"):
+      #if-statement kijkt of een item nodig is om in kamer te gaan
       if kamers[speler.location][Benodigdheden] in speler.inventory:
         os.system('clear')
         print(kamers[speler.location][Titel])
         print("=" * 40)
+        #if-statement kijkt of kamer al een keer is bezocht
         if kamers[speler.location][Titel] not in speler.bezochteKamers:
+          #if-statement kijkt of typemachine animatie aan staat
           if speler.typemachine == "true":
             for char in (kamers[speler.location][Beschrijving]):
               sys.stdout.write(char)
               sys.stdout.flush()
               time.sleep(0.03)
-          elif speler.typemachine == "false":
+          #elif-statement kijkt of typemachine animatie uit staat
+          elif speler.typemachine == "false" or kamers[speler.location][Titel] in speler.bezochteKamers:
             print(kamers[speler.location][Beschrijving])
           print("\n"+"=" * 40)
+          #voegt de kamer toe aan lijst van bezochte kamers \/
           speler.bezochteKamers.append(kamers[speler.location][Titel])
+        #elif-statement kijk of speler al wel in kamer is geweest
         elif kamers[speler.location][Titel] in speler.bezochteKamers:
-          print(kamers[speler.location][Beschrijving2])        
+          print(kamers[speler.location][Beschrijving2])      
         tekst="Op deze locatie liggen de volgende items: \n"
+        #if-statement kijkt of typemachine animatie aan staat
         if speler.typemachine == "true":
           for char in (tekst):
             sys.stdout.write(char)            
             sys.stdout.flush()
             time.sleep(0.03)
-        elif speler.typemachine == "false":
+        #elif-statement kijkt of typemachine animatie uit staat
+        elif speler.typemachine == "false" or kamers[speler.location][Titel] in speler.bezochteKamers:
           print(tekst)
+        #print de items in een kamer \/
         for (i) in (kamers[speler.location][Items]):
           print(i) 
         print("~" * 30)
         Tekst="je kunt de volgende dingen doen: \n"
+        #if-statement kijkt of typemachine animatie aan staat
         if speler.typemachine == "true":
           for char in (Tekst):
             sys.stdout.write(char)
             sys.stdout.flush()
             time.sleep(0.03)
-        elif speler.typemachine == "false":
+        #elif-statement kijkt of typemachine animatie uit staat
+        elif speler.typemachine == "false" or kamers[speler.location][Titel] in speler.bezochteKamers:
           print(Tekst)
+        #if-statement kijkt of typemachine animatie aan staat
         if speler.typemachine == "true":
           for char in (kamers[speler.location][Acties]):
             sys.stdout.write(char)
             sys.stdout.flush()
             time.sleep(0.03)
-        elif speler.typemachine == "false":
+        #elif-statement kijkt of typemachine animatie uit staat
+        elif speler.typemachine == "false" or kamers[speler.location][Titel] in speler.bezochteKamers:
           print(kamers[speler.location][Acties])
         print("\n"+"~" * 30)
         TEKST="je kunt de volgende richtingen op: \n"
+        #if-statement kijkt of typemachine animatie aan staat
         if speler.typemachine == "true":
           for char in (TEKST):
             sys.stdout.write(char)
             sys.stdout.flush()
           time.sleep(0.03)
-        elif speler.typemachine == "false":
+        #elif-statement kijkt of typemachine animatie uit staat
+        elif speler.typemachine == "false" or kamers[speler.location][Titel] in speler.bezochteKamers:
           print("je kunt de volgende richtingen op: \n")
+        #if-statement kijkt of typemachine animatie aan staat
         if speler.typemachine == "true":
           for char in (kamers[speler.location][Richtingen]):
             sys.stdout.write(char)
             sys.stdout.flush()
             time.sleep(0.03)
-        elif speler.typemachine == "false":
+        #elif-statement kijkt of typemachine animatie uit staat
+        elif speler.typemachine == "false" or kamers[speler.location][Titel] in speler.bezochteKamers:
           print(kamers[speler.location][Richtingen])
         print("\n"+"~" * 30)
+        #start de keuze-functie \/
         keuze()
+      ##als er een item nodig is in eenkamer:##
       else:
         os.system('clear')
         print("Je hebt een item nodig om naar deze kamer te gaan")
@@ -282,15 +320,18 @@ while True:
           move_dest = kamers[speler.location][E]
           move_player(move_dest)
           print_location()
+    #elif-statement kijkt of je er dood kan gaan en 100% health hebt
     elif kamers[speler.location][Dood] == ("yes") and speler.health == "100%":
       os.system('clear')
       speler.health = "50%"
       print("=" * 40)
+      #if-statement kijkt of typemachine animatie aan staat
       if speler.typemachine == "true":
         for char in (kamers[speler.location][Beschrijving]):
           sys.stdout.write(char)
           sys.stdout.flush()
           time.sleep(0.03)
+      #elif-statement kijkt of typemachine animatie uit staat
       elif speler.typemachine == "false":
         print(kamers[speler.location][Beschrijving])
       print("=" * 40)
@@ -301,15 +342,18 @@ while True:
         move_player(move_dest)
       else:
         move_dest = kamers[speler.location][A]
-        move_player(move_dest)        
+        move_player(move_dest)  
+    #elif-statement kijkt of je er dood kunt gaan en 50% health hebt      
     elif kamers[speler.location][Dood] == ("yes") and speler.health == "50%":
       os.system('clear')
       print("=" * 40)
+      #if-statement kijkt of typemachine animatie aan staat
       if speler.typemachine == "true":
         for char in (kamers[speler.location][Doodsbeschrijving]):
           sys.stdout.write(char)
           sys.stdout.flush()
           time.sleep(0.03)
+      #elif-statement kijkt of typemachine animatie uit staat
       elif speler.typemachine == "false":
         print(kamers[speler.location][Doodsbeschrijving])
       print("=" * 40)
@@ -319,17 +363,21 @@ while True:
         dood()
       else:
         dood()
+    #elif statement kijkt of een speler kan winnen in een kamer
     elif kamers[speler.location][Win] == ("yes"):
       os.system('clear')
       print("=" * 40)
+      #if-statement kijkt of typemachine animatie aan staat
       if speler.typemachine == "true":
         for char in (kamers[speler.location][Beschrijving]):
           sys.stdout.write(char)
           sys.stdout.flush()
           time.sleep(0.03)
+      #elif-statement kijkt of typemachine animatie uit staat
       elif speler.typemachine == "false":
         print(kamers[speler.location][Beschrijving])
       print("=" * 40)
+      win()
 
   #speler verplaatsen
   def move_player(move_dest):
@@ -401,6 +449,20 @@ while True:
       print("vul een geldig antwoord in!")
       time.sleep(1)
       dood()
+
+  def win():
+    print("Yess!!! \nJe hebt het spel uitgespeeld! \nGoed gedaan! \nWil je nog een keer spelen om een ander einde te krijgen?")
+    print("[ja/nee]")
+    choice = input('')
+    if choice.lower() ==  "ja":
+      intro()
+    elif choice.lower() == "nee":
+      hoofdmenu()
+    else:
+      os.system('clear')
+      print("vul een geldig antwoord in!")
+      time.sleep(1)
+      win()
 
   #quit-menu
   def quit():

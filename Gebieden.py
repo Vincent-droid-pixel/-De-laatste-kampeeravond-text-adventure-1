@@ -47,7 +47,7 @@ kamers = {
   },
   "StenenPlein" :{
     "titel" : "Stenen pleintje",
-    "beschrijving" : "Je loopt langs het pad en komt op een stenen pleintje. je ziet een klein meisje tegen in witte gewaden. Het lijkt bijna alsof ze gloeit zo licht zijn haar gewaden. Zodra het meisje je ziet loopt ze weg richting het zuiden. Je twijfelt of je haar zal volgen of dat je het rivier pad moet volgen. Verder zie je ook nog bij een stenen pilaar een EHBO-kit liggen.",
+    "beschrijving" : "Je loopt langs het pad en komt op een stenen pleintje. je komt een klein meisje tegen in witte gewaden. Het lijkt bijna alsof ze gloeit zo licht zijn haar gewaden. Zodra het meisje je ziet loopt ze weg richting het zuiden. Je twijfelt of je haar zal volgen of dat je het rivier pad moet volgen. Verder zie je ook nog bij een stenen pilaar een EHBO-kit liggen.",
     "beschrijving2" : "",
     "richtingen" : "O: Verder naar het oosten \nZ: Meisje naar zuiden \nW: De rivier bij de brug",
     A : "StenenPlein",
@@ -56,7 +56,7 @@ kamers = {
     D : "RivierMetBrug",
     "items" : ["EHBO-kit"],
     "benodigdheden" : "kompas",
-    "acties" : "d (drop item) \nu (use) \nh (health) \ni (inventory) \n? (help) \nq (quit) \n/ (opties)",
+    "acties" : "g/d (get/drop item) \nu (use) \nh (health) \ni (inventory) \n? (help) \nq (quit) \n/ (opties)",
     "dood" : "no",
     "win" : "no"
   },
