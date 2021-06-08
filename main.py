@@ -93,8 +93,8 @@ kamers = {
     B : "RotsmuurInOosten",
     C : "MeisjeZuiden",
     D : "RivierMetBrug",
-    "items" : ["hakblok"],
-    "acties" : "g/d (get/drop item), \nh (health), \ni (inventory), \n? (help), \nq (quit)",
+    "items" : [""],
+    "acties" : "d (drop item), \nh (health), \ni (inventory), \n? (help), \nq (quit)",
     "dood" : "no",
     "win" : "no"
   },
@@ -114,11 +114,76 @@ kamers = {
     B : "RotsmuurInOosten",
     C : "PadLangsRotsmuur",
     D : "RivierpadNaarOosten",
-    "items" : ["Machette"],
+    "items" : ["Machete"],
     "acties" : "g/d (get/drop item), \nh (health), \ni (inventory), \n? (help), \nq (quit)",
     "dood" : "no",
     "win" : "no",
-  }
+  },
+  "PadLangsRotsmuur" :{
+    "titel" : "Het pad langs de rotsmuur",
+    "beschrijving" : "Je loopt op het pad en je ziet een verlaten huisje. \nJe loopt er naar toe en je betwijfelt of het wel een goede keuze is om naar binnen te gaan. \nJe denkt bij jezelf: “In horrorfilms zijn dit altijd de plekken waar het fout gaat.” \nDe ingang van het huisje is ten zuiden van jou. \nJe kan ook om het huisje heen via een pad ten westen van jou.",
+    "richtingen" : "N: De Rotsmuur \nZ: Het huisje in het zuiden binnengaan \nW: Het pad om het huisje heen",
+    A : "RotsmuurInOosten",
+    B : "PadLangsRotsmuur",
+    C : "Huisje",
+    D : "PadLangsHuisje",
+    "items" : [""],
+    "acties" : "d (drop item), \nh (health), \ni (inventory), \n? (help), \nq (quit)",
+    "dood" : "no",
+    "win" : "no"
+  },
+  "Huisje" :{
+    "titel" : "In het huisje",
+    "beschrijving" : "Je besluit om naar binnen te gaan. \nBij je eerste stap in het huis hoor je meteen de planken onder je voeten kraken. \nJe vraagt je af hoe oud dit huis eigenlijk is. \nOpeens hoor je een piano spelen in een kamer ten oosten van jou. \nJe weet niet of je daar heen moet gaan, maar misschien vind je dan eindelijk iemand anders in dit vreselijke bos. \nJe kan ook naar het zuiden de trap af naar de kelder.",
+    "richtingen" : "N: Het huisje uit \nO: De kamer met de pianomuziek \nZ: De keldertrap af",
+    A : "PadLangsRotsmuur",
+    B : "Pianokamer",
+    C : "Kelder",
+    D : "Huisje",
+    "items" : [""],
+    "acties" : "d (drop item), \nh (health), \ni (inventory), \n? (help), \nq (quit)",
+    "dood" : "no",
+    "win" : "no"
+  },
+  "" :{
+    "titel" : "",
+    "beschrijving" : "",
+    "richtingen" : "",
+    A : "",
+    B : "",
+    C : "",
+    D : "",
+    "items" : [""],
+    "acties" : "",
+    "dood" : "",
+    "win" : ""
+  },
+  "" :{
+    "titel" : "",
+    "beschrijving" : "",
+    "richtingen" : "",
+    A : "",
+    B : "",
+    C : "",
+    D : "",
+    "items" : [""],
+    "acties" : "",
+    "dood" : "",
+    "win" : ""
+  },
+  "" :{
+    "titel" : "",
+    "beschrijving" : "",
+    "richtingen" : "",
+    A : "",
+    B : "",
+    C : "",
+    D : "",
+    "items" : [""],
+    "acties" : "",
+    "dood" : "",
+    "win" : ""
+  },
 }
 
 #inventory laten zien
@@ -206,16 +271,28 @@ def print_location():
     elif speler.typemachine == "false":
       print(kamers[speler.location][Beschrijving])
     print("\n"+"=" * 40)
-    tekst="Op deze locatie liggen de volgende items: \n"
-    if speler.typemachine == "true":
-      for char in (tekst):
-        sys.stdout.write(char)
-        sys.stdout.flush()
-        time.sleep(0.03)
-    elif speler.typemachine == "false":
-      print(tekst)
-    for (i) in (kamers[speler.location][Items]):
-      print(i)
+    if kamers[speler.location][Items][0] == "":
+      tekst="Op deze locatie liggen geen items."
+      if speler.typemachine == "true":
+        for char in (tekst):
+          sys.stdout.write(char)
+          sys.stdout.flush()
+          time.sleep(0.03)
+      elif speler.typemachine == "false":
+        print(tekst)
+      for (i) in (kamers[speler.location][Items]):
+        print(i)
+    else:
+      tekst="Op deze locatie liggen de volgende items: \n"
+      if speler.typemachine == "true":
+        for char in (tekst):
+          sys.stdout.write(char)
+          sys.stdout.flush()
+          time.sleep(0.03)
+      elif speler.typemachine == "false":
+        print(tekst)
+      for (i) in (kamers[speler.location][Items]):
+        print(i) 
     print("~" * 30)
     Tekst="je kunt de volgende dingen doen: \n"
     if speler.typemachine == "true":
