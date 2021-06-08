@@ -9,7 +9,6 @@ from Gebieden import kamers
 # - verhaal afmaken
 # - bugs fixen
 # - help menu aanpassen
-# - bij usen ook beschikbare items laten zien
 
 while True:
 
@@ -93,7 +92,7 @@ while True:
   speler = speler()
 
 
-      #inventory laten zien
+  #inventory laten zien
   def inventory():
     os.system('clear')
     print ("- - - - - - - - - - - - - - - - \ndit heb je op dit moment bij je: \n" + speler.inventory, "\n-------------------------------")
@@ -512,7 +511,7 @@ while True:
   #help-menu voor in een kamer
   def help_in_game():
     os.system('clear')
-    print("============================================= \nJe hebt verschillende controls in deze text adventure. \nTen eerste kan je met help [?] dit menu zien en met quit [q] kan je stoppen. \nVerder kun je met ‘get item [g]’ en ‘drop item [d]’ items oppakken en laten vallen / neerleggen. \nDaarnaast kan je met ‘inventory [i]’ alle items zien die je hebt opgepakt. \nOok kan je nog met de gegeven windrichtingen (Noord [n], Oost [o], Zuid [z], West [w]) bij elk gebied, naar het volgende gebied gaan. \nTenslotte kan je met ‘health [h]’ je health zien. \nAl deze controls kan je tijdens het gehele spel gebruiken. \n=============================================")
+    print("============================================= \nJe hebt verschillende controls in deze text adventure. \nTen eerste kan je met help [?] dit menu zien en met quit [q] kan je stoppen. \nDaarnaast kan je ook nog met opties [/] naar het opties menu. \nVerder kun je met ‘get item [g]’ en ‘drop item [d]’ items oppakken en laten vallen / neerleggen. \nDaarnaast kan je met ‘inventory [i]’ alle items zien die je hebt opgepakt en met use [u] kun je een item gebruiken.  \nOok kan je nog met de gegeven windrichtingen (Noord [n], Oost [o], Zuid [z], West [w]) bij elk gebied, naar het volgende gebied gaan. \nTenslotte kan je met ‘health [h]’ je health zien. \nAl deze controls kan je tijdens het gehele spel gebruiken. \n=============================================")
     choice = input(" Typ 'terug' als je terug naar het spel wil gaan: ")
     if choice.lower() == "terug":
       os.system('clear')
@@ -524,7 +523,7 @@ while True:
 
   #help-menu voor in het hoofdmenu
   def help():
-    print("============================================= \nJe hebt verschillende controls in deze text adventure. \nTen eerste kan je met help [?] dit menu zien en met quit [q] kan je stoppen. \nVerder kun je met ‘get item [g]’ en ‘drop item [d]’ items oppakken en laten vallen / neerleggen. \nDaarnaast kan je met ‘inventory [i]’ alle items zien die je hebt opgepakt. \nOok kan je nog met de gegeven windrichtingen (Noord [n], Oost [o], Zuid [z], West [w]) bij elk gebied, naar het volgende gebied gaan. \nTenslotte kan je met ‘health [h]’ je health zien. \nAl deze controls kan je tijdens het gehele spel gebruiken. \n=============================================")
+    print("============================================= \nJe hebt verschillende controls in deze text adventure. \nTen eerste kan je met help [?] dit menu zien en met quit [q] kan je stoppen. \nDaarnaast kan je ook nog met opties [/] naar het opties menu. \nVerder kun je met ‘get item [g]’ en ‘drop item [d]’ items oppakken en laten vallen / neerleggen. \nDaarnaast kan je met ‘inventory [i]’ alle items zien die je hebt opgepakt en met use [u] kun je een item gebruiken.  \nOok kan je nog met de gegeven windrichtingen (Noord [n], Oost [o], Zuid [z], West [w]) bij elk gebied, naar het volgende gebied gaan. \nTenslotte kan je met ‘health [h]’ je health zien. \nAl deze controls kan je tijdens het gehele spel gebruiken. \n=============================================")
     choice = input(""" Typ 'menu' als je terug naar het menu wil gaan: """)
     if choice.lower() == "menu":
       os.system('clear')
