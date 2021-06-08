@@ -2,6 +2,34 @@ import os
 import sys
 import time
 
+# Kamers #
+Titel = 'titel'
+Location = 'location'
+Beschrijving = 'beschrijving'
+Items = 'items'
+Richtingen = 'richtingen'
+Dood = 'dood'
+Win = 'win'
+Acties = "acties"
+A = 'a'
+B = 'b'
+C = 'c'
+D = 'd'
+
+#spelerinfo
+#class woop:
+#  def  speler(zelf):
+#    zelf.naam = ''
+#    zelf.location = 'RivierMetBrug'
+#speler = speler()
+
+class speler:
+    def __init__(self):
+        self.name = ''
+        self.health = 1 
+        self.location = 'RivierMetBrug'
+speler = speler()
+
 #health
 playerhealth = "100%"
 
@@ -13,8 +41,10 @@ kamers = {
   "RivierMetBrug" : {
     "titel" : "een rivier met een brug.",
     "beschrijving" : "Het is een gammele houten brug die naar het noorden over de rivier loopt. Je weet niet of je er eigenlijk wel overheen kunt lopen zonder dat hij doorbreekt. Je ziet ook nog een pad langs het water stroomopwaarts richting het oosten lopen.",
-    "windrichtingen" : ["noorden", "oosten"],
-    "aangrenzende gebieden" : ["BrugNaarNoorden", "RivierpadNaarOosten"],
+    "richtingen" : ["A: De brug naar het noorden", "B: Het rivierpad naar het oosten"],
+    A : "BrugNaarNoorden",
+    B : "RivierpadNaarOosten",
+    "items" : "",
     "acties" : ["g (get item)", "d (drop item)", "h (health)", "i (inventory)"],
     "death" : "no",
     "win" : "no"
@@ -23,7 +53,7 @@ kamers = {
     "titel" : "de brug",
     "doodsbeschrijving" : "Je loopt er overheen. De brug breekt door en je valt in het ijskoude water. Je weet er uiteindelijk nog wel uit te klimmen, maar uiteindelijk ga je toch dood door onderkoeling.",
     "nietdoodsbeschrijving" : "Je loopt er overheen. De brug breekt door en je valt in het ijskoude water. Je weet er uiteindelijk nog wel uit te klimmen en overleeft het maar net.",
-    "windrichtingen" : "",
+    "richtingen" : "",
     "acties" : "",
     "death" : "yes",
     "win" : "no"
@@ -31,7 +61,8 @@ kamers = {
   "RivierpadNaarOosten" :{
     "titel" : "Het rivierpad naar het Oosten",
     "beschrijving" : "Je loopt langs het pad en komt een klein meisje tegen in witte gewaden. Het lijkt bijna alsof ze gloeit zo licht zijn haar gewaden. Zodra het meisje je ziet loopt ze weg richting het zuiden. Je twijfelt of je haar zal volgen of dat je het rivier pad moet volgen.",
-    "windrichtingen" : "z, o",
+    "richtingen" : "z, o",
+    "items" : "",
     "acties" : ["g (get item)", "d (drop item)", "h (health)", "i (inventory)"],
     "death" : "no",
     "win" : "no"
@@ -92,71 +123,102 @@ def quit():
   if choice.lower == "ja":
     hoofdmenu()
   elif choice.lower == "nee":
-    game()
+    NaamInvullen()
   else:
     print("vul een geldig antwoord in!")
     print("______________________________")
     quit()
 
+#speler verplaatsen
+def move_player(move_dest):
+	speler.location = move_dest
+	print_location()
+
+
 
 #de gameloop
-def game(gebied):
-  locatie = kamers[gebied]
+ITEMS = kamers[speler.location][Items]
+ACTIES = kamers[speler.location][Acties]
+RICHTINGEN = kamers[speler.location][Richtingen]
+
+# print locatie 
+def print_location():
+  os.system('clear')
+  print(kamers[speler.location][Titel])
+  print("=" * 40)
+  print(kamers[speler.location][Beschrijving])
+  print("=" * 40)
+  print("Op deze locatie liggen de volgende items:")
+  for (i) in (ITEMS):
+    print(i)
+  print("~" * 30)
+  print("je kunt de volgende dingen doen:")
+  for (a) in (ACTIES):
+    print(a)
+  print("~" * 30)
+  print("je kunt de volgende richtingen op:")
+  for (x) in (RICHTINGEN):
+    print (x)
+  print("~" * 30)
+  keuze()
+
+
+#keuzemenu
+def keuze():
+  print ('Wat wil je doen?')
+  option = input('')
+  if option.lower() == "a":
+    move_dest = kamers[speler.location][A]
+    move_player(move_dest)
+  elif option.lower() == "b":
+    move_dest = kamers[speler.location][B]
+    move_player(move_dest)
+  elif option.lower() == "c":
+    move_dest = kamers[speler.location][C]
+    move_player(move_dest)
+  elif option.lower() == "d":
+    move_dest = kamers[speler.location][D]
+    move_player(move_dest)
+  elif option.lower() ==  "i":
+      inventory()
+    #elif option.lower == "g":
+    #  getitem()
+    #elif option.lower == "d":
+    #  dropitem()
+  elif option.lower() == "h":
+      health()
+  elif option.lower() == "q":
+      quit()
+  else:
+    print("Vul aub een geldig antwoord in")
+    keuze()
+
+  #location = kamers[gebied]
 
   #titel en beschrijving van kamer verkrijgen#
-  titel = locatie["titel"]
-  beschrijving = locatie["beschrijving"]
+  #titel = locatie["titel"]
+  #beschrijving = locatie["beschrijving"]
   #nietdoodsbeschrijving = locatie["nietdoodsbeschrijving"]
-  windrichtingen = locatie["windrichtingen"]
-  acties = locatie["acties"]
-  dood = locatie["death"]
-  winnen = locatie["win"]
+  #acties = locatie["acties"]
+  #dood = locatie["death"]
+  #winnen = locatie["win"]
 
   #kamer beschrijven
-  os.system('clear')
-  doodgaan = (dood)
-
-
+  #os.system('clear')
+  #doodgaan = (dood)
     
-  if doodgaan == "no":
-    print("=============================================")
-    print(f"je bent bij {titel}")
-    print(beschrijving)
-    print("=============================================")
-    print("de windrichtingen waar je heen kan gaan zijn:")
-    for (i, w) in enumerate(windrichtingen):
-      print (i+1, w)
-    print("~~~~~~~~~~~~~~~~~~~~~~~~~~~~")
-    print("de acties die je kunt uitvoeren zijn:")
-    for (a) in (acties):
-      print(a)
-    print("~~~~~~~~~~~~~~~~~~~~~~~~~~~~")
-    #choice = int(input('Typ je keuze:'))
-    #(gebied) = "aangrenzende gebieden"[choice - 1]
-    choice = (input("typ wat je wil doen: "))
-    if choice ==  "i":
-      inventory()
-    #elif choice == "g":
-    #  getitem()
-    #elif choice == "d":
-    #  dropitem()
-    elif choice == "h":
-      health()
-    elif choice == "q":
-      quit()
-    else:
-      gebied = locatie
-      game(gebied)
-  elif doodgaan == "yes" and playerhealth == "100%":
-    #playerhealth = "50%"
-    print(nietdoodsbeschrijving)
-  elif doodgaan == "yes" and playerhealth == "50%":
-    print(beschrijving)
-    time.sleep(5)
-    dood()
   
+  
+    
 
-
+  #elif doodgaan == "yes" and playerhealth == "100%":
+    #playerhealth = "50%"
+  #  print(nietdoodsbeschrijving)
+  #elif doodgaan == "yes" and playerhealth == "50%":
+  #  print(beschrijving)
+  #  time.sleep(5)
+  #  dood()
+  
 
 #intro#
 def intro():
@@ -168,7 +230,7 @@ def intro():
   if choice.lower() == "ok":
     os.system('clear')
     #zorgt dat de speler naam kan invullen
-    game("RivierMetBrug")
+    print_location()
   else:
     os.system('clear')
     print("=============================================")
@@ -199,15 +261,6 @@ def NaamInvullen():
   else:
     os.system('clear')
     intro()
-
-
-class speler:
-  def  spelernaam(zelf):
-    zelf.naam = ''
-
-speler = speler()
-
-
 
 
 #helpmenu
