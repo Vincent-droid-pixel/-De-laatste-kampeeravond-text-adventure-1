@@ -33,10 +33,10 @@ kamers = {
 
 #inventory laten zien
 def inventory():
-  print ("- - - - - - - - - - - - - - - -")
-  print ("dit heb je op dit moment bij je:")
-  print (playerinventory)
-  print ("-------------------------------")
+  print ("                      |- - - - - - - - - - - - - - - -")
+  print ("                      |dit heb je op dit moment bij je:")
+  print ("                      |",playerinventory)
+  print ("                      |-------------------------------")
   time.sleep(3)
   choice = (input("typ wat je wil doen: "))
   if choice ==  "i":
@@ -50,10 +50,10 @@ def inventory():
 
 #health laten zien
 def health():
-  print ("- - - - - - - - - - - - - - - -")
-  print ("dit is hoeveel % health je op dit moment hebt:")
-  print (playerhealth)
-  print ("-------------------------------")
+  print ("                      |- - - - - - - - - - - - - - - -")
+  print ("                      |dit is hoeveel % health je op dit moment hebt:")
+  print ("                      | ",playerhealth)
+  print ("                      |-------------------------------")
   time.sleep(3)
   choice = (input("typ wat je wil doen: "))
   if choice ==  "i":
