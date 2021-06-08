@@ -244,9 +244,14 @@ while True:
       elif speler.typemachine == "false":
         print(kamers[speler.location][Beschrijving])
       print("=" * 40)
-      time.sleep(8)
-      move_dest = kamers[speler.location][A]
-      move_player(move_dest)
+      print("druk [enter] om terug te gaan")
+      choice = input('')
+      if choice.lower() == "":  
+        move_dest = kamers[speler.location][A]
+        move_player(move_dest)
+      else:
+        move_dest = kamers[speler.location][A]
+        move_player(move_dest)        
     elif kamers[speler.location][Dood] == ("yes") and speler.health == "50%":
       os.system('clear')
       print("=" * 40)
