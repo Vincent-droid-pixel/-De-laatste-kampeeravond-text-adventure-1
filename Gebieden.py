@@ -101,9 +101,9 @@ kamers = {
         "Je loopt op het pad en je ziet een verlaten huisje. \nJe loopt er naar toe en je betwijfelt of het wel een goede keuze is om naar binnen te gaan. \nJe denkt bij jezelf: “In horrorfilms zijn dit altijd de plekken waar het fout gaat.” \nDe ingang van het huisje is ten zuiden van jou. \nJe kan ook om het huisje heen via een pad ten westen van jou.",
         "beschrijving2": "",
         "richtingen":
-        "N: De Rotsmuur \nZ: Het huisje in het zuiden binnengaan \nW: Het pad om het huisje heen",
+        "N: De Rotsmuur \nO: Op de rotsmuur \nZ: Het huisje in het zuiden binnengaan \nW: Het pad om het huisje heen",
         A: "RotsmuurInOosten",
-        B: "PadLangsRotsmuur",
+        B: "OpDeRotsmuur",
         C: "Huisje",
         D: "PadLangsHuisje",
         "items": [""],
@@ -125,23 +125,23 @@ kamers = {
         "items": [""],
         "benodigdheden": "",
         "acties": "",
-        "dood": "",
-        "win": ""
+        "dood": "no",
+        "win": "no"
     },
   "Vallei": {
         "titel": "De vallei",
-        "beschrijving": "",
+        "beschrijving": "Je loopt de vallei binnen. Het is er prachtig!!! Je ziet overal eenhoorns en regenbogen. De bomen zijn gemaakt van suikerspin en de meren zijn gevuld met limonade. Het liefts blijf je voor altijd hier. Helaas kan dat niet. Je kan alleen weer naar dezelfde kant als waar je vandaan kwam.",
         "beschrijving2": "",
-        "richtingen": "",
-        A: "",
-        B: "",
-        C: "",
-        D: "",
-        "items": [""],
+        "richtingen": "W: Boven op de rotsmuur",
+        A: "Vallei",
+        B: "Vallei",
+        C: "Vallei",
+        D: "OpDeRotsmuur",
+        "items": ["suikerspin", "chocolade", "lolly's", "eenhoorn"],
         "benodigdheden": "",
-        "acties": "",
-        "dood": "",
-        "win": ""
+        "acties": "g/d (get/drop item) \nu (use) \nh (health) \ni (inventory) \n? (help) \nq (quit) \n/ (opties",
+        "dood": "no",
+        "win": "no"
     },
   "Bos": {
         "titel": "Het bos",
