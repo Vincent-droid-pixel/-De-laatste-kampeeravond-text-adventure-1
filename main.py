@@ -9,7 +9,18 @@ kamers = {
     "windrichtingen" : "n, o",
     "acties" : "g (get item), d (drop item), h (health), i (inventory)"
   },
-
+  "BrugNaarNoorden" : {
+    "titel" : "de brug",
+    "beschrijving" : "Je loopt er overheen. De brug breekt door en je valt in het ijskoude water. Je weet er uiteindelijk nog wel uit te klimmen, maar uiteindelijk ga je toch dood door onderkoeling.",
+    "windrichtingen" : "",
+    "acties" : ""
+  },
+  "RivierpadNaarOosten" :{
+    "titel" : "Het rivierpad naar het Oosten",
+    "beschrijving" : "Je loopt langs het pad en komt een klein meisje tegen in witte gewaden. Het lijkt bijna alsof ze gloeit zo licht zijn haar gewaden. Zodra het meisje je ziet loopt ze weg richting het zuiden. Je twijfelt of je haar zal volgen of dat je het rivier pad moet volgen.",
+    "windrichtingen" : "z, o",
+    "acties" : "g (get item), d (drop item), h (health), i (inventory)"
+  }
 }
 
 #de gameloop
@@ -25,7 +36,7 @@ def game(gebied):
   #kamer beschrijven
   os.system('clear')
   print("=============================================")
-  print(f"Je komt aan bij {titel}")
+  print(f"je bent bij {titel}")
   print(beschrijving)
   print("=============================================")
   print("de windrichtingen waar je heen kan gaan zijn")
