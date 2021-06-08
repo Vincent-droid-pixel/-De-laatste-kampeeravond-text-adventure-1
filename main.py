@@ -1,12 +1,18 @@
 import os
 import sys
 import time
+##TABEL##
+#from tabulate import tabulate
+#table = [[]]
+#print(tabulate(table, tablefmt='grid'))
+
 
 #TO-do
-# - Get/Drop item systeem
 # - overige kamers toevoegen in data
 # - forloops weghalen
 # - bugs fixen
+
+
 
 # Kamers #
 Titel = "titel"
@@ -142,19 +148,28 @@ def print_location():
     os.system('clear')
     print(kamers[speler.location][Titel])
     print("=" * 40)
-    print(kamers[speler.location][Beschrijving])
-    print("=" * 40)
+    #print(kamers[speler.location][Beschrijving])
+    for char in (kamers[speler.location][Beschrijving]):
+      sys.stdout.write(char)
+      sys.stdout.flush()
+      time.sleep(0.02)
+    print("\n"+"=" * 40)
     print("Op deze locatie liggen de volgende items:")
     for (i) in (ITEMS):
       print(i)
     print("~" * 30)
     print("je kunt de volgende dingen doen:")
-    print(kamers[speler.location][Acties])
-    print("~" * 30)
+    for char in (kamers[speler.location][Acties]):
+      sys.stdout.write(char)
+      sys.stdout.flush()
+      time.sleep(0.03)
+    print("\n"+"~" * 30)
     print("je kunt de volgende richtingen op:")
-    #for (x) in (RICHTINGEN):
-    print (kamers[speler.location][Richtingen])
-    print("~" * 30)
+    for char in (kamers[speler.location][Richtingen]):
+      sys.stdout.write(char)
+      sys.stdout.flush()
+      time.sleep(0.03)
+    print("\n"+"~" * 30)
     keuze()
   elif kamers[speler.location][Dood] == ("yes") and speler.health == "100%":
     os.system('clear')
