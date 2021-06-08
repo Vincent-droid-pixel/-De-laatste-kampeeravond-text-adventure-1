@@ -12,7 +12,30 @@ import time
 # - forloops weghalen
 # - bugs fixen
 
-
+#opties-menu 
+def opties():
+  print('=' * 40)
+  print("Wil je een typemachine animatie bij de tekst?")
+  print("ja/nee")
+  print('=' * 40)
+  choice = input('')
+  if choice.lower() == "ja":
+    speler.typemachine = "true"
+    os.system('clear')
+    print("typemachine animatie staat nu aan")
+    time.sleep(2.5)
+    os.system('clear')
+    hoofdmenu()
+  elif choice.lower() == "nee":
+    speler.typemachine = "false"
+    os.system('clear')
+    print("typemachine animatie staat nu uit")
+    time.sleep(2.5)
+    os.system('clear')
+    hoofdmenu()
+  else:
+    os.system('clear')
+    opties()
 
 # Kamers #
 Titel = "titel"
@@ -29,14 +52,15 @@ B = "b"
 C = "c"
 D = "d"
 
-
 class speler:
     def __init__(self):
         self.name = ''
         self.health = "100%"   
         self.inventory = ["kompas"]      
         self.location = 'RivierMetBrug'
+        self.typemachine = 'true'
 speler = speler()
+
 
 
 #kamers
@@ -49,7 +73,7 @@ kamers = {
     B : "RivierpadNaarOosten",
     C : "RivierMetBrug",
     D : "RivierMetBrug",
-    "items" : ["botermes"],
+    "items" : [""],
     "acties" : "d (drop item) \nh (health) \ni (inventory) \n? (help) \nq (quit)",
     "dood" : "no",
     "win" : "no"
@@ -101,7 +125,7 @@ def get():
   if choice.lower() == "":
     kamers[speler.location][Items].remove()
     speler.inventory.append()
-  elif choice.lower == "terug":
+  elif choice.lower() == "terug":
     print_location()
   else:
     os.system("clear")
@@ -138,52 +162,75 @@ def move_player(move_dest):
 	speler.location = move_dest
 	print_location()
 
-# print locatie 
+# print locatie waarbij rekening wordt gehouden of er bij opties is aangezet dat er een typemachine animatie is of niet
 def print_location():
   if kamers[speler.location][Dood] == ("no") and kamers[speler.location][Win] == ("no"):
     os.system('clear')
     print(kamers[speler.location][Titel])
     print("=" * 40)
-    #print(kamers[speler.location][Beschrijving])
-    for char in (kamers[speler.location][Beschrijving]):
-      sys.stdout.write(char)
-      sys.stdout.flush()
-      time.sleep(0.03)
+    if speler.typemachine == "true":
+      for char in (kamers[speler.location][Beschrijving]):
+        sys.stdout.write(char)
+        sys.stdout.flush()
+        time.sleep(0.03)
+    elif speler.typemachine == "false":
+      print(kamers[speler.location][Beschrijving])
     print("\n"+"=" * 40)
     tekst="Op deze locatie liggen de volgende items: \n"
-    for char in (tekst):
-      sys.stdout.write(char)
-      sys.stdout.flush()
-      time.sleep(0.03)
+    if speler.typemachine == "true":
+      for char in (tekst):
+        sys.stdout.write(char)
+        sys.stdout.flush()
+        time.sleep(0.03)
+    elif speler.typemachine == "false":
+      print(tekst)
     for (i) in (kamers[speler.location][Items]):
       print(i)
     print("~" * 30)
     Tekst="je kunt de volgende dingen doen: \n"
-    for char in (Tekst):
-      sys.stdout.write(char)
-      sys.stdout.flush()
-      time.sleep(0.03)
-    for char in (kamers[speler.location][Acties]):
-      sys.stdout.write(char)
-      sys.stdout.flush()
-      time.sleep(0.03)
+    if speler.typemachine == "true":
+      for char in (Tekst):
+        sys.stdout.write(char)
+        sys.stdout.flush()
+        time.sleep(0.03)
+    elif speler.typemachine == "false":
+      print(Tekst)
+    if speler.typemachine == "true":
+      for char in (kamers[speler.location][Acties]):
+        sys.stdout.write(char)
+        sys.stdout.flush()
+        time.sleep(0.03)
+    elif speler.typemachine == "false":
+      print(kamers[speler.location][Acties])
     print("\n"+"~" * 30)
     TEKST="je kunt de volgende richtingen op: \n"
-    for char in (TEKST):
-      sys.stdout.write(char)
-      sys.stdout.flush()
-      time.sleep(0.03)
-    for char in (kamers[speler.location][Richtingen]):
-      sys.stdout.write(char)
-      sys.stdout.flush()
-      time.sleep(0.03)
+    if speler.typemachine == "true":
+      for char in (TEKST):
+       sys.stdout.write(char)
+       sys.stdout.flush()
+       time.sleep(0.03)
+    elif speler.typemachine == "false":
+      print("je kunt de volgende richtingen op: \n")
+    if speler.typemachine == "true":
+      for char in (kamers[speler.location][Richtingen]):
+        sys.stdout.write(char)
+        sys.stdout.flush()
+        time.sleep(0.03)
+    elif speler.typemachine == "false":
+      print(kamers[speler.location][Richtingen])
     print("\n"+"~" * 30)
     keuze()
   elif kamers[speler.location][Dood] == ("yes") and speler.health == "100%":
     os.system('clear')
     speler.health = "50%"
     print("=" * 40)
-    print(kamers[speler.location][Beschrijving])
+    if speler.typemachine == "true":
+      for char in (kamers[speler.location][Beschrijving]):
+        sys.stdout.write(char)
+        sys.stdout.flush()
+        time.sleep(0.03)
+    elif speler.typemachine == "false":
+      print(kamers[speler.location][Beschrijving])
     print("=" * 40)
     time.sleep(8)
     move_dest = kamers[speler.location][A]
@@ -191,14 +238,26 @@ def print_location():
   elif kamers[speler.location][Dood] == ("yes") and speler.health == "50%":
     os.system('clear')
     print("=" * 40)
-    print(kamers[speler.location][Doodsbeschrijving])
+    if speler.typemachine == "true":
+      for char in (kamers[speler.location][Doodsbeschrijving]):
+        sys.stdout.write(char)
+        sys.stdout.flush()
+        time.sleep(0.03)
+    elif speler.typemachine == "false":
+      print(kamers[speler.location][Doodsbeschrijving])
     print("=" * 40)
     time.sleep(8)
     dood()
   elif kamers[speler.location][Win] == ("yes"):
     os.system('clear')
     print("=" * 40)
-    print(kamers[speler.location][Beschrijving])
+    if speler.typemachine == "true":
+      for char in (kamers[speler.location][Beschrijving]):
+        sys.stdout.write(char)
+        sys.stdout.flush()
+        time.sleep(0.03)
+    elif speler.typemachine == "false":
+      print(kamers[speler.location][Beschrijving])
     print("=" * 40)
 
 #keuzemenu
@@ -326,6 +385,8 @@ def help():
     print("============================================= \n|       vul een geldig antwoord in!!!       |")
     help()
 
+
+    
 #stop-menu
 def stop():
   print("=============================================")
@@ -344,7 +405,7 @@ def stop():
 
 #hoofdmenu
 def hoofdmenu():
-  print("============================================= \n|                                           | \n|                                           | \n|     ----------------------------------    | \n|     || Welkom bij de text adventure ||    | \n|     ||    van Sannah en Vincent     ||    | \n|     ----------------------------------    | \n|                 Kies uit:                 | \n|                                           |\n|                  -start                   | \n|                  -stop                    | \n|                  -help                    | \n =============================================")
+  print("============================================= \n|                                           | \n|                                           | \n|     ----------------------------------    | \n|     || Welkom bij de text adventure ||    | \n|     ||    van Sannah en Vincent     ||    | \n|     ----------------------------------    | \n|                 Kies uit:                 | \n|                                           |\n|                  -start                   | \n|                  -stop                    | \n|                  -help                    | \n|                  -opties                  | \n=============================================")
   choice = input("""           Vul je keuze in:  """)   
   #keuzes van het hoofdmenu#
   if choice.lower() == "start":
@@ -356,6 +417,9 @@ def hoofdmenu():
   elif choice.lower() == "help":
     os.system('clear')
     help()
+  elif choice.lower() == "opties":
+    os.system('clear')
+    opties()
   else:
     os.system('clear')
     print("============================================= \n|       vul een geldig antwoord in!!!       |")
@@ -363,11 +427,3 @@ def hoofdmenu():
                                         
 
 hoofdmenu()
-
-class speler:
-    def __init__(self):
-        self.name = ''
-        self.health = "100%"   
-        self.inventory = ["kompas"]      
-        self.location = 'RivierMetBrug'
-speler = speler()
