@@ -197,6 +197,62 @@ kamers = {
     "dood" : "no",
     "win" : "no"
   },
+    "" :{
+    "titel" : "",
+    "beschrijving" : "",
+    "richtingen" : "",
+    A : "",
+    B : "",
+    C : "",
+    D : "",
+    "items" : [""],
+    "benodigdheden" : "",
+    "acties" : "",
+    "dood" : "",
+    "win" : ""
+  },
+    "" :{
+    "titel" : "",
+    "beschrijving" : "",
+    "richtingen" : "",
+    A : "",
+    B : "",
+    C : "",
+    D : "",
+    "items" : [""],
+    "benodigdheden" : "",
+    "acties" : "",
+    "dood" : "",
+    "win" : ""
+  },
+    "" :{
+    "titel" : "",
+    "beschrijving" : "",
+    "richtingen" : "",
+    A : "",
+    B : "",
+    C : "",
+    D : "",
+    "items" : [""],
+    "benodigdheden" : "",
+    "acties" : "",
+    "dood" : "",
+    "win" : ""
+  },
+    "" :{
+    "titel" : "",
+    "beschrijving" : "",
+    "richtingen" : "",
+    A : "",
+    B : "",
+    C : "",
+    D : "",
+    "items" : [""],
+    "benodigdheden" : "",
+    "acties" : "",
+    "dood" : "",
+    "win" : ""
+  },
 }
 
 #inventory laten zien
@@ -380,7 +436,15 @@ def print_location():
 def keuze():
   print ('Wat wil je doen?')
   option = input('')
-  if option.lower() == "n":
+  MogelijkeOpties = "nozw?igdhq"
+  if len(option) != 1 or option not in MogelijkeOpties:
+    os.system('clear')
+    print("Vul aub een geldig antwoord in!")
+    time.sleep(1.5)
+    os.system('clear')
+    print_location()
+    keuze()
+  elif option.lower() == "n":
     move_dest = kamers[speler.location][A]
     move_player(move_dest)
   elif option.lower() == "o":
@@ -404,14 +468,6 @@ def keuze():
       health()
   elif option.lower() == "q":
       quit()
-  else:
-    os.system('clear')
-    print("Vul aub een geldig antwoord in!")
-    time.sleep(1.5)
-    os.system('clear')
-    print_location()
-    keuze()
-
 #========================================
 
 #MENU'S
