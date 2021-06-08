@@ -370,7 +370,11 @@ def print_location():
     elif speler.typemachine == "false":
       print(kamers[speler.location][Beschrijving])
     print("=" * 40)
-    win()
+    choice = input('')
+    if choice.lower() == "":
+      win()
+    else:
+      win()
 
 #speler verplaatsen
 def move_player(move_dest):
