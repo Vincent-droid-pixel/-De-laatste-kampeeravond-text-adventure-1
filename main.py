@@ -42,6 +42,7 @@ Location = "location"
 Beschrijving = "beschrijving"
 Doodsbeschrijving = "doodsbeschrijving"
 Items = "items"
+Benodigdheden = "benodigdheden"
 Richtingen = "richtingen"
 Dood = "dood"
 Win = "win"
@@ -50,14 +51,15 @@ A = "a"
 B = "b"
 C = "c"
 D = "d"
+E = "e"
 
 class speler:
     def __init__(self):
         self.name = ''
         self.health = "100%"   
-        self.inventory = ["kompas"]      
+        self.inventory = ["","kompas"]      
         self.location = 'RivierMetBrug'
-        self.typemachine = 'true'
+        self.typemachine = 'false'
 speler = speler()
 
 
@@ -73,6 +75,7 @@ kamers = {
     C : "RivierMetBrug",
     D : "RivierMetBrug",
     "items" : [""],
+    "benodigdheden" : "",
     "acties" : "d (drop item) \nh (health) \ni (inventory) \n? (help) \nq (quit)",
     "dood" : "no",
     "win" : "no"
@@ -82,18 +85,20 @@ kamers = {
     "doodsbeschrijving" : "Je loopt er overheen. De brug breekt door en je valt in het ijskoude water. Je weet er uiteindelijk nog wel uit te klimmen, maar uiteindelijk ga je toch dood door onderkoeling.",
     "beschrijving" : "Je loopt er overheen. De brug breekt door en je valt in het ijskoude water. Je weet er uiteindelijk nog wel uit te klimmen en overleeft het maar net. Je gaat snel terug naar het vorige kruispunt",
     A : "RivierMetBrug",
+    "benodigdheden" : "",
     "dood" : "yes",
     "win" : "no"
   },
   "RivierpadNaarOosten" :{
     "titel" : "Het rivierpad naar het Oosten",
     "beschrijving" : "Je loopt langs het pad en komt een klein meisje tegen in witte gewaden. Het lijkt bijna alsof ze gloeit zo licht zijn haar gewaden. Zodra het meisje je ziet loopt ze weg richting het zuiden. Je twijfelt of je haar zal volgen of dat je het rivier pad moet volgen.",
-    "richtingen" : "O Verder naar het oosten \nZ: Meisje naar zuiden \nW: De rivier bij de brug",
+    "richtingen" : "O: Verder naar het oosten \nZ: Meisje naar zuiden \nW: De rivier bij de brug",
     A : "RivierpadNaarOosten",
     B : "RotsmuurInOosten",
     C : "MeisjeZuiden",
     D : "RivierMetBrug",
     "items" : [""],
+    "benodigdheden" : "",
     "acties" : "d (drop item), \nh (health), \ni (inventory), \n? (help), \nq (quit)",
     "dood" : "no",
     "win" : "no"
@@ -103,6 +108,7 @@ kamers = {
     "doodsbeschrijving" : "Je komt op een open plaats en ziet het meisje nog net verdwijnen tussen de bosjes. Opeens komt er uit diezelfde bosjes een groot gruwelijk monster (details nog uitwerken). Het monster verslindt je met huid en haar en je gaat dood.",
     "beschrijving" : "Je komt op een open plaats en ziet het meisje nog net verdwijnen tussen de bosjes. \nOpeens komt er uit diezelfde bosjes een groot gruwelijk monster (details nog uitwerken). \nJe weet net op tijd weg te rennen en komt weer uit bij het rivierpad",
     A : "RivierpadNaarOosten",
+    "benodigdheden" : "",
     "dood" : "yes",
     "win" : "no"
   },
@@ -114,7 +120,8 @@ kamers = {
     B : "RotsmuurInOosten",
     C : "PadLangsRotsmuur",
     D : "RivierpadNaarOosten",
-    "items" : ["Machete"],
+    "items" : ["machete"],
+    "benodigdheden" : "",
     "acties" : "g/d (get/drop item), \nh (health), \ni (inventory), \n? (help), \nq (quit)",
     "dood" : "no",
     "win" : "no",
@@ -128,6 +135,7 @@ kamers = {
     C : "Huisje",
     D : "PadLangsHuisje",
     "items" : [""],
+    "benodigdheden" : "",
     "acties" : "d (drop item), \nh (health), \ni (inventory), \n? (help), \nq (quit)",
     "dood" : "no",
     "win" : "no"
@@ -141,11 +149,12 @@ kamers = {
     C : "Kelder",
     D : "Huisje",
     "items" : [""],
+    "benodigdheden" : "",
     "acties" : "d (drop item), \nh (health), \ni (inventory), \n? (help), \nq (quit)",
     "dood" : "no",
     "win" : "no"
   },
-  "" :{
+  "Kelder" :{
     "titel" : "",
     "beschrijving" : "",
     "richtingen" : "",
@@ -154,11 +163,12 @@ kamers = {
     C : "",
     D : "",
     "items" : [""],
+    "benodigdheden" : "",
     "acties" : "",
     "dood" : "",
     "win" : ""
   },
-  "" :{
+  "Pianokamer" :{
     "titel" : "",
     "beschrijving" : "",
     "richtingen" : "",
@@ -167,22 +177,25 @@ kamers = {
     C : "",
     D : "",
     "items" : [""],
+    "benodigdheden" : "",
     "acties" : "",
     "dood" : "",
     "win" : ""
   },
-  "" :{
-    "titel" : "",
-    "beschrijving" : "",
-    "richtingen" : "",
-    A : "",
-    B : "",
-    C : "",
-    D : "",
+  "PadLangsHuisje" :{
+    "titel" : "Je bent op het pad naast het huisje",
+    "beschrijving" : "Je bent nu in de achtertuin van het schimmige oude huisje. Er is hier niet veel te vinden, maar er ligt wel een lang stevig touw. Dat zou vast handig kunnen zijn. Opeens hoor je een soort gezang. Het lijkt vanuit zuidelijke richting te komen. Ook is de rotsmuur in oostelijke richting nu laag genoeg om er overheen te klimmen.",
+    "richtingen" : "O: Terug naar de voortuin van het huisje \nZ: Het pad volgen naar het zuiden",
+    A : "PadLangsHuisje",
+    B : "PadLangsRotsmuur",
+    C : "Achtertuin",
+    D : "PadLangsHuisje",
+    E : "PadLangsRotsmuur",
     "items" : [""],
+    "benodigdheden" : "machete",
     "acties" : "",
-    "dood" : "",
-    "win" : ""
+    "dood" : "no",
+    "win" : "no"
   },
 }
 
@@ -207,9 +220,9 @@ def get():
   print (kamers[speler.location][Items])
   print("Welk item wil je oppakken? (of typ [terug] als je terug wil gaan)")
   choice = input("")
-  if choice.lower() == "":
-    kamers[speler.location][Items].remove("")
-    speler.inventory.append("")
+  if choice.lower() == "machete":
+    kamers[speler.location][Items].remove("machete")
+    speler.inventory.append("machete")
     print("je hebt het item opgepakt")
     time.sleep(2)
     print_location()
@@ -235,10 +248,10 @@ def drop():
     print("=" * 40)
     time.sleep(4)
     dood()
-  elif choice.lower() == "":
+  elif choice.lower() == "machete":
     os.system("clear")
-    kamers[speler.location][Items].append("")
-    speler.inventory.remove("")
+    kamers[speler.location][Items].append("machete")
+    speler.inventory.remove("machete")
     print("je hebt het item gedropt")
     time.sleep(2)
     print_location()
@@ -260,73 +273,69 @@ def move_player(move_dest):
 # print locatie waarbij rekening wordt gehouden of er bij opties is aangezet dat er een typemachine animatie is of niet
 def print_location():
   if kamers[speler.location][Dood] == ("no") and kamers[speler.location][Win] == ("no"):
-    os.system('clear')
-    print(kamers[speler.location][Titel])
-    print("=" * 40)
-    if speler.typemachine == "true":
-      for char in (kamers[speler.location][Beschrijving]):
-        sys.stdout.write(char)
-        sys.stdout.flush()
-        time.sleep(0.03)
-    elif speler.typemachine == "false":
-      print(kamers[speler.location][Beschrijving])
-    print("\n"+"=" * 40)
-    if kamers[speler.location][Items][0] == "":
-      tekst="Op deze locatie liggen geen items."
+    if kamers[speler.location][Benodigdheden] in speler.inventory:
+      os.system('clear')
+      print(kamers[speler.location][Titel])
+      print("=" * 40)
       if speler.typemachine == "true":
-        for char in (tekst):
+        for char in (kamers[speler.location][Beschrijving]):
           sys.stdout.write(char)
           sys.stdout.flush()
           time.sleep(0.03)
       elif speler.typemachine == "false":
-        print(tekst)
-      for (i) in (kamers[speler.location][Items]):
-        print(i)
-    else:
+        print(kamers[speler.location][Beschrijving])
+      print("\n"+"=" * 40)
       tekst="Op deze locatie liggen de volgende items: \n"
       if speler.typemachine == "true":
         for char in (tekst):
-          sys.stdout.write(char)
+          sys.stdout.write(char)            
           sys.stdout.flush()
           time.sleep(0.03)
       elif speler.typemachine == "false":
         print(tekst)
       for (i) in (kamers[speler.location][Items]):
         print(i) 
-    print("~" * 30)
-    Tekst="je kunt de volgende dingen doen: \n"
-    if speler.typemachine == "true":
-      for char in (Tekst):
-        sys.stdout.write(char)
-        sys.stdout.flush()
+      print("~" * 30)
+      Tekst="je kunt de volgende dingen doen: \n"
+      if speler.typemachine == "true":
+        for char in (Tekst):
+          sys.stdout.write(char)
+          sys.stdout.flush()
+          time.sleep(0.03)
+      elif speler.typemachine == "false":
+        print(Tekst)
+      if speler.typemachine == "true":
+        for char in (kamers[speler.location][Acties]):
+          sys.stdout.write(char)
+          sys.stdout.flush()
+          time.sleep(0.03)
+      elif speler.typemachine == "false":
+        print(kamers[speler.location][Acties])
+      print("\n"+"~" * 30)
+      TEKST="je kunt de volgende richtingen op: \n"
+      if speler.typemachine == "true":
+        for char in (TEKST):
+          sys.stdout.write(char)
+          sys.stdout.flush()
         time.sleep(0.03)
-    elif speler.typemachine == "false":
-      print(Tekst)
-    if speler.typemachine == "true":
-      for char in (kamers[speler.location][Acties]):
-        sys.stdout.write(char)
-        sys.stdout.flush()
-        time.sleep(0.03)
-    elif speler.typemachine == "false":
-      print(kamers[speler.location][Acties])
-    print("\n"+"~" * 30)
-    TEKST="je kunt de volgende richtingen op: \n"
-    if speler.typemachine == "true":
-      for char in (TEKST):
-       sys.stdout.write(char)
-       sys.stdout.flush()
-       time.sleep(0.03)
-    elif speler.typemachine == "false":
-      print("je kunt de volgende richtingen op: \n")
-    if speler.typemachine == "true":
-      for char in (kamers[speler.location][Richtingen]):
-        sys.stdout.write(char)
-        sys.stdout.flush()
-        time.sleep(0.03)
-    elif speler.typemachine == "false":
-      print(kamers[speler.location][Richtingen])
-    print("\n"+"~" * 30)
-    keuze()
+      elif speler.typemachine == "false":
+        print("je kunt de volgende richtingen op: \n")
+      if speler.typemachine == "true":
+        for char in (kamers[speler.location][Richtingen]):
+          sys.stdout.write(char)
+          sys.stdout.flush()
+          time.sleep(0.03)
+      elif speler.typemachine == "false":
+        print(kamers[speler.location][Richtingen])
+      print("\n"+"~" * 30)
+      keuze()
+    else:
+      os.system('clear')
+      print("Je hebt een item nodig om naar deze kamer te gaan")
+      time.sleep(2)
+      move_dest = kamers[speler.location][E]
+      move_player(move_dest)
+      print_location()
   elif kamers[speler.location][Dood] == ("yes") and speler.health == "100%":
     os.system('clear')
     speler.health = "50%"
