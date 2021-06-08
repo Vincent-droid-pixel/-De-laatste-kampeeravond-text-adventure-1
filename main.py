@@ -1,26 +1,43 @@
 import os
 import sys
+
 #kamers
 kamers = {
   "RivierMetBrug" : {
-    "titel" : "een rivier met een gammele brug.",
+    "titel" : "een rivier met een brug.",
     "beschrijving" : "Het is een gammele houten brug die naar het noorden over de rivier loopt. Je weet niet of je er eigenlijk wel overheen kunt lopen zonder dat hij doorbreekt. Je ziet ook nog een pad langs het water stroomopwaarts richting het oosten lopen.",
-    "opties" : ["n", "o"]
+    "windrichtingen" : "n, o",
+    "acties" : "g (get item), d (drop item), h (health), i (inventory)"
   },
+
 }
+
 #de gameloop
 def game(gebied):
   locatie = kamers[gebied]
+
   #titel en beschrijving van kamer verkrijgen#
   titel = locatie["titel"]
   beschrijving = locatie["beschrijving"]
+  windrichtingen = locatie["windrichtingen"]
+  acties = locatie["acties"]
+
   #kamer beschrijven
   os.system('clear')
   print("=============================================")
   print(f"Je komt aan bij {titel}")
   print(beschrijving)
   print("=============================================")
-  print("typ de windrichting waar je heen wil gaan: ")
+  print("de windrichtingen waar je heen kan gaan zijn")
+  print(windrichtingen)
+  print("~~~~~~~~~~~~~~~~~~~~~~~~~~~~")
+  print("de acties die je kan doen zijn:")
+  print(acties)
+  print("~~~~~~~~~~~~~~~~~~~~~~~~~~~~")
+  print("typ wat je wil doen: ")
+
+
+
 
 #naam invullen#
 def NaamInvullen():
@@ -35,6 +52,7 @@ def NaamInvullen():
   print("=============================================")
   speler_naam = input()
   speler.naam = speler_naam
+
   format_string = "Hallo %s, leuk dat je deze text adventure speelt!"
   print(format_string % speler.naam)
 
@@ -43,11 +61,14 @@ def NaamInvullen():
     game("RivierMetBrug")
   else:
     game("RivierMetBrug")
-  
+
+
 class speler:
   def  spelernaam(zelf):
     zelf.naam = ''
+
 speler = speler()
+
 
 #intro#
 def intro():
@@ -81,8 +102,33 @@ def help():
     print("|       vul een geldig antwoord in!!!       |")
     help()
 
+#stopmenu
+def stop():
+  print("=============================================")
+  choice = input("""     Weet je zeker dat je wil stoppen?  """)
+  if choice == "Ja":
+    os.system('clear')
+    print("bedankt voor het spelen!!!")
+    sys.exit
+  elif choice == "ja":
+    os.system('clear')
+    print("bedankt voor het spelen!!!")
+    sys.exit
+  elif choice == "Nee":
+    os.system('clear')
+    hoofdmenu()
+  elif choice == "nee":
+    os.system('clear')
+    hoofdmenu()
+  else:
+    os.system('clear')
+    print("=============================================")
+    print("|       vul een geldig antwoord in!!!       |")
+    stop()
 
-#hoofdmenu#
+
+
+#hoofdmenu
 def hoofdmenu():
   print("=============================================")
   print("|                                           |")
@@ -106,7 +152,11 @@ def hoofdmenu():
     os.system('clear')
     intro()
   elif choice == "Stop":
-    sys.exit
+    os.system('clear')
+    stop()
+  elif choice == "stop":
+    os.system('clear')
+    stop()
   elif choice == "help":
     os.system('clear')
     help()
@@ -116,4 +166,5 @@ def hoofdmenu():
     print("|       vul een geldig antwoord in!!!       |")
     hoofdmenu()
                                         
+
 hoofdmenu()
