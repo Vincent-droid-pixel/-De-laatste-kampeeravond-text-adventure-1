@@ -16,8 +16,6 @@ C = "c"
 D = "d"
 E = "e"
 
-
-
 #kamers
 kamers = {
   #alles voordat je het huisje in gaat#
@@ -148,7 +146,7 @@ kamers = {
   "Tunnel" :{
     "titel" : "De donkere tunnel",
     "beschrijving" : "Het is erg donker en je ziet niet waar je heengaat. gelukkig heb je die zaklamp die je in de pianokamer gevonden hebt. Je klikt op het lichtknopje en ziet nu hoe de tunnel er van binnen uitziet. Overal hangen spinnenwebben en je wil eigenlijk niet te lang in de tunnel blijven. Je ziet geen andere weg dan verder door de tunnel",
-    "beschrijving2" : "",
+    "beschrijving2" : "Je staat in de tunnel",
     "richtingen" : "N: Terug naar de kelder Z: Verder door de tunnel",
     A : "Kelder",
     B : "Tunnel",
@@ -162,8 +160,8 @@ kamers = {
   },
   "Grot" :{
     "titel" : "De grot",
-    "beschrijving" : "",
-    "beschrijving2" : "",
+    "beschrijving" : "Je wil toch wat verder verkennen. Je loopt een grot in die je door het in het rondte bewegen van je zaklamp kon zien. Je bent alles gefascineerd aan het bekijken als je opeens struikelt over een metalen voorwerp. Je bent opgelucht als je ziet dat het een zwaard is, die zo in je voet of been had kunnen belanden.",
+    "beschrijving2" : "Je staat in de grot.",
     "richtingen" : "",
     A : "",
     B : "",
@@ -186,26 +184,26 @@ kamers = {
     C : "Achtertuin",
     D : "PadLangsHuisje",
     E : "PadLangsRotsmuur",
-    "items" : [""],
+    "items" : ["touw"],
     "benodigdheden" : "machete",
     "acties" : "d (drop item) \nu (use) \nh (health) \ni (inventory) \n? (help) \nq (quit) \n/ (opties)",
     "dood" : "no",
     "win" : "no"
   },
-    "" :{
-    "titel" : "",
-    "beschrijving" : "",
+    "Achtertuin" :{
+    "titel" : "Achtertuin",
+    "beschrijving" : "Je komt op een open veld en het gezang is hier veel duidelijker te horen. Zonder het zelf door te hebben word je gelokt door een sirene. De sirene krijgt het zover je naar haar toe te lokken, zodat je op 1 meter afstand van haar staat. De sirene kijkt met haar witte zielloze ogen naar je. Dan opeens voelt het alsof je moe wordt. En als het eigenlijk al te laat is kom je erachter dat de sirene je ziel aan het opzuigen is.",
     "beschrijving2" : "",
     "richtingen" : "",
-    A : "",
+    A : "PadLangsHuisje",
     B : "",
     C : "",
     D : "",
     "items" : [""],
     "benodigdheden" : "",
     "acties" : "",
-    "dood" : "",
-    "win" : ""
+    "dood" : "yes",
+    "win" : "no"
   },
     "" :{
     "titel" : "",
