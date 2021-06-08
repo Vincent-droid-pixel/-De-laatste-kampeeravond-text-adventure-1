@@ -85,15 +85,22 @@ def health():
 
 #doodsfunctie
 def dood():
-  print("wil je nog een keer spelen?")
-  choice = (input())
-  if choice.lower == "ja":
+  os.system('clear')
+  animation = ["wil","wil je", "wil je nog", "wil je nog een", "wil je nog een keer", "wil je nog een keer spelen?"]
+  for x in range(len(animation)):
+    time.sleep(0.5)
+    sys.stdout.write("\r" + animation[x % len(animation)])
+  print("_")
+  choice = (input(''))
+  if choice.lower() == "ja":
+    os.system('clear')
     NaamInvullen()
-  elif choice.lower == "nee":
+  elif choice.lower() == "nee":
+    os.system('clear')
     sys.exit
   else:
     print("vul een geldig antwoord in!")
-    print("___________________________________________")
+    time.sleep(1.5)
     dood()
 
 
@@ -102,9 +109,11 @@ def dood():
 def quit():
   os.system('clear')
   choice = (input("weet je zeker dat je wil stoppen?"))
-  if choice.lower == "ja":
+  if choice.lower() == "ja":
+    os.system('clear')
     hoofdmenu()
-  elif choice.lower == "nee":
+  elif choice.lower() == "nee":
+    os.system('clear')
     print_location()
   else:
     print("vul een geldig antwoord in!")
@@ -152,7 +161,7 @@ def print_location():
     print("=" * 40)
     print(kamers[speler.location][Beschrijving])
     print("=" * 40)
-    time.sleep(10)
+    time.sleep(8)
     move_dest = kamers[speler.location][A]
     move_player(move_dest)
   elif kamers[speler.location][Dood] == ("yes") and speler.health == "50%":
@@ -160,11 +169,13 @@ def print_location():
     print("=" * 40)
     print(kamers[speler.location][Doodsbeschrijving])
     print("=" * 40)
-    time.sleep(10)
+    time.sleep(8)
     dood()
   elif kamers[speler.location][Win] == ("yes"):
     os.system('clear')
-    print("yay")
+    print("=" * 40)
+    print(kamers[speler.location][Beschrijving])
+    print("=" * 40)
 
 #keuzemenu
 def keuze():
@@ -184,9 +195,9 @@ def keuze():
     move_player(move_dest)
   elif option.lower() ==  "i":
       inventory()
-    #elif option.lower == "g":
+    #elif option.lower() == "g":
     #  getitem()
-    #elif option.lower == "d":
+    #elif option.lower() == "d":
     #  dropitem()
   elif option.lower() == "h":
       health()
