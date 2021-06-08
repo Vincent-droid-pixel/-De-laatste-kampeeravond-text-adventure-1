@@ -68,7 +68,7 @@ kamers = {
   "RivierMetBrug" : {
     "titel" : "een rivier met een brug.",
     "beschrijving" : "Het is een gammele houten brug die naar het noorden over de rivier loopt. Je weet niet of je er eigenlijk wel overheen kunt lopen zonder dat hij doorbreekt. Je ziet ook nog een pad langs het water stroomopwaarts richting het oosten lopen.",
-    "richtingen" : "1: De brug naar het noorden \n2: Het rivierpad naar het oosten",
+    "richtingen" : "N: De brug naar het noorden \nO: Het rivierpad naar het oosten",
     A : "BrugNaarNoorden",
     B : "RivierpadNaarOosten",
     C : "RivierMetBrug",
@@ -123,8 +123,9 @@ def get():
   print("Welk item wil je oppakken? (of typ [terug] als je terug wil gaan)")
   choice = input("")
   if choice.lower() == "":
-    kamers[speler.location][Items].remove()
-    speler.inventory.append()
+    kamers[speler.location][Items].remove("")
+    speler.inventory.append("")
+    print_location()
   elif choice.lower() == "terug":
     print_location()
   else:
@@ -147,6 +148,11 @@ def drop():
     print("=" * 40)
     time.sleep(4)
     dood()
+  elif choice.lower() == "":
+    os.system("clear")
+    kamers[speler.location][Items].append("")
+    speler.inventory.remove("")
+    print_location()
   else:
     os.system("clear")
     print("vul een item in dat je bij je hebt!")
@@ -264,16 +270,16 @@ def print_location():
 def keuze():
   print ('Wat wil je doen?')
   option = input('')
-  if option == "1":
+  if option.lower() == "n":
     move_dest = kamers[speler.location][A]
     move_player(move_dest)
-  elif option == "2":
+  elif option.lower() == "o":
     move_dest = kamers[speler.location][B]
     move_player(move_dest)
-  elif option == "3":
+  elif option.lower() == "z":
     move_dest = kamers[speler.location][C]
     move_player(move_dest)
-  elif option == "4":
+  elif option.lower() == "w":
     move_dest = kamers[speler.location][D]
     move_player(move_dest)
   elif option.lower() == "?":
