@@ -145,7 +145,7 @@ kamers = {
     },
   "Bos": {
         "titel": "Het bos",
-        "beschrijving": "",
+        "beschrijving": "Je loopt richting het bos. De doornen en uitstekende takken doen je gedachtes niet veel goeds, totdat je bedenkt dat je nog die machete hebt die je gevonden hebt in de grot! “Deze tocht heeft wel lang genoeg geduurd..” denk je. Je gebruikt je laatste beetje kracht en slaat je weg door het bos heen met de machete. Je ziet de de tent waar je vrienden in liggen.",
         "beschrijving2": "",
         "richtingen": "",
         A: "",
@@ -153,10 +153,10 @@ kamers = {
         C: "",
         D: "",
         "items": [""],
-        "benodigdheden": "",
-        "acties": "",
-        "dood": "",
-        "win": ""
+        "benodigdheden": "machete",
+        "acties": "d (drop item) \nu (use) \nh (health) \ni (inventory) \n? (help) \nq (quit) \n/ (opties)",
+        "dood": "no",
+        "win": "yes"
     },
     #alles vanaf dat je in het huisje komt
     "Huisje": {
