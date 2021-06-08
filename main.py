@@ -49,7 +49,7 @@ kamers = {
     B : "RivierpadNaarOosten",
     C : "RivierMetBrug",
     D : "RivierMetBrug",
-    "items" : [""],
+    "items" : ["botermes"],
     "acties" : "d (drop item) \nh (health) \ni (inventory) \n? (help) \nq (quit)",
     "dood" : "no",
     "win" : "no"
@@ -70,7 +70,7 @@ kamers = {
     B : "MeisjeZuiden",
     C : "RivierMetBrug",
     D : "RivierpadNaarOosten",
-    "items" : "",
+    "items" : ["hakblok"],
     "acties" : "g/d (get/drop item), \nh (health), \ni (inventory), \n? (help), \nq (quit)",
     "dood" : "no",
     "win" : "no"
@@ -132,10 +132,6 @@ def drop():
 
 ###DE GAME-LOOP###
 
-#locatie informatie verkrijgen
-ITEMS = kamers[speler.location][Items]
-ACTIES = kamers[speler.location][Acties]
-RICHTINGEN = kamers[speler.location][Richtingen]
 
 #speler verplaatsen
 def move_player(move_dest):
@@ -152,19 +148,31 @@ def print_location():
     for char in (kamers[speler.location][Beschrijving]):
       sys.stdout.write(char)
       sys.stdout.flush()
-      time.sleep(0.02)
+      time.sleep(0.03)
     print("\n"+"=" * 40)
-    print("Op deze locatie liggen de volgende items:")
-    for (i) in (ITEMS):
+    tekst="Op deze locatie liggen de volgende items: \n"
+    for char in (tekst):
+      sys.stdout.write(char)
+      sys.stdout.flush()
+      time.sleep(0.03)
+    for (i) in (kamers[speler.location][Items]):
       print(i)
     print("~" * 30)
-    print("je kunt de volgende dingen doen:")
+    Tekst="je kunt de volgende dingen doen: \n"
+    for char in (Tekst):
+      sys.stdout.write(char)
+      sys.stdout.flush()
+      time.sleep(0.03)
     for char in (kamers[speler.location][Acties]):
       sys.stdout.write(char)
       sys.stdout.flush()
       time.sleep(0.03)
     print("\n"+"~" * 30)
-    print("je kunt de volgende richtingen op:")
+    TEKST="je kunt de volgende richtingen op: \n"
+    for char in (TEKST):
+      sys.stdout.write(char)
+      sys.stdout.flush()
+      time.sleep(0.03)
     for char in (kamers[speler.location][Richtingen]):
       sys.stdout.write(char)
       sys.stdout.flush()
