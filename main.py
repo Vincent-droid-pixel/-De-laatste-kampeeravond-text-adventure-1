@@ -1,6 +1,25 @@
 import os
 import sys
 
+#kamerbeschrijving#
+def kamerbeschrijving():
+  os.system('clear')
+  print("=============================================")
+
+  print("=============================================")
+
+#intro#
+def intro():
+  os.system('clear')
+  print("======================================================")
+  print("Je bent gezellig met vrienden aan het kamperen in het bos. Helaas kon je niet slapen. Je dacht: 'laat ik even een boswandeling maken, zodat ik beter kan slapen.' Het enige wat je meeneemt is een kompas.")
+  print("")
+  print("======================================================")
+  choice = input(""" Schrijf OK als je verder wil gaan: """)
+  if choice == "OK":
+    kamerbeschrijving()
+
+#hoofdmenu#
 def hoofdmenu():
   print("=============================================")
   print("|                                           |")
@@ -16,8 +35,11 @@ def hoofdmenu():
 |                  Help                     |  
 =============================================               
            Vul je keuze in:  """)   
+  #keuzes van het hoofdmenu#
   if choice == "Start":
-    print("Start")
+        intro()
+  elif choice == "start":
+    intro()
   elif choice == "Stop":
     sys.exit
   elif choice == "Stop":
@@ -27,6 +49,6 @@ def hoofdmenu():
     print("=============================================")
     print("|       vul een geldig antwoord in!!!       |")
     hoofdmenu()
-
+                                        
 
 hoofdmenu()
