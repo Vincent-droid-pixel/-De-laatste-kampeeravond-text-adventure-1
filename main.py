@@ -2,39 +2,35 @@ import os
 import sys
 import time
 
-# Kamers #
-Titel = 'titel'
-Location = 'location'
-Beschrijving = 'beschrijving'
-Items = 'items'
-Richtingen = 'richtingen'
-Dood = 'dood'
-Win = 'win'
-Acties = "acties"
-A = 'a'
-B = 'b'
-C = 'c'
-D = 'd'
+#TO-do
+# - Get/Drop item systeem
+# - overige kamers toevoegen in data
 
-#spelerinfo
-#class woop:
-#  def  speler(zelf):
-#    zelf.naam = ''
-#    zelf.location = 'RivierMetBrug'
-#speler = speler()
+
+# Kamers #
+Titel = "titel"
+Location = "location"
+Beschrijving = "beschrijving"
+Doodsbeschrijving = "doodsbeschrijving"
+Items = "items"
+Richtingen = "richtingen"
+Dood = "dood"
+Win = "win"
+Acties = "acties"
+A = "a"
+B = "b"
+C = "c"
+D = "d"
+
 
 class speler:
     def __init__(self):
         self.name = ''
-        self.health = 1 
+        self.health = "100%"   
+        self.inventory = ["kompas"]      
         self.location = 'RivierMetBrug'
 speler = speler()
 
-#health
-playerhealth = "100%"
-
-#inventory
-playerinventory = ["kompas"]
 
 #kamers
 kamers = {
@@ -44,18 +40,21 @@ kamers = {
     "richtingen" : ["A: De brug naar het noorden", "B: Het rivierpad naar het oosten"],
     A : "BrugNaarNoorden",
     B : "RivierpadNaarOosten",
-    "items" : "",
+    C : "RivierMetBrug",
+    D : "RivierMetBrug",
+    "items" : "X",
     "acties" : ["g (get item)", "d (drop item)", "h (health)", "i (inventory)"],
-    "death" : "no",
+    "dood" : "no",
     "win" : "no"
   },
   "BrugNaarNoorden" : {
     "titel" : "de brug",
     "doodsbeschrijving" : "Je loopt er overheen. De brug breekt door en je valt in het ijskoude water. Je weet er uiteindelijk nog wel uit te klimmen, maar uiteindelijk ga je toch dood door onderkoeling.",
-    "nietdoodsbeschrijving" : "Je loopt er overheen. De brug breekt door en je valt in het ijskoude water. Je weet er uiteindelijk nog wel uit te klimmen en overleeft het maar net.",
+    "beschrijving" : "Je loopt er overheen. De brug breekt door en je valt in het ijskoude water. Je weet er uiteindelijk nog wel uit te klimmen en overleeft het maar net. Je gaat snel terug naar het vorige kruispunt",
+    A : "RivierMetBrug",
     "richtingen" : "",
     "acties" : "",
-    "death" : "yes",
+    "dood" : "yes",
     "win" : "no"
   },
   "RivierpadNaarOosten" :{
@@ -64,27 +63,25 @@ kamers = {
     "richtingen" : "z, o",
     "items" : "",
     "acties" : ["g (get item)", "d (drop item)", "h (health)", "i (inventory)"],
-    "death" : "no",
+    "dood" : "no",
     "win" : "no"
   }
 }
 
 #inventory laten zien
 def inventory():
-  print ("                      |- - - - - - - - - - - - - - - -")
-  print ("                      |dit heb je op dit moment bij je:")
-  print ("                      |",playerinventory)
-  print ("                      |-------------------------------")
-  time.sleep(3)
-  choice = (input("typ wat je wil doen: "))
-  if choice ==  "i":
-    inventory()
-  #elif choice == "g":
-  #  getitem()
-  #elif choice == "d":
-  #  dropitem()
-  elif choice == "h":
-    health()
+  os.system('clear')
+  print ("- - - - - - - - - - - - - - - - \ndit heb je op dit moment bij je: \n",speler.inventory, "\n-------------------------------")
+  time.sleep(5)
+  print_location()
+
+#health laten zien
+def health():
+  os.system('clear')
+  print ("- - - - - - - - - - - - - - - - \ndit is hoeveel health je op dit moment hebt: \n",speler.health,"\n-------------------------------")
+  time.sleep(5)
+  print_location()
+
 
 #doodsfunctie
 def dood():
@@ -99,22 +96,7 @@ def dood():
     print("___________________________________________")
     dood()
 
-#health laten zien
-def health():
-  print ("                      |- - - - - - - - - - - - - - - -")
-  print ("                      |dit is hoeveel % health je op dit moment hebt:")
-  print ("                      | ",playerhealth)
-  print ("                      |-------------------------------")
-  time.sleep(3)
-  choice = (input("typ wat je wil doen: "))
-  if choice ==  "i":
-    inventory()
-  #elif choice == "g":
-  #  getitem()
-  #elif choice == "d":
-  #  dropitem()
-  elif choice == "h":
-    health()
+
 
 #quitmenu
 def quit():
@@ -123,45 +105,66 @@ def quit():
   if choice.lower == "ja":
     hoofdmenu()
   elif choice.lower == "nee":
-    NaamInvullen()
+    print_location()
   else:
     print("vul een geldig antwoord in!")
     print("______________________________")
     quit()
+
+
+
+#de gameloop
+#locatie informatie verkrijgen
+ITEMS = kamers[speler.location][Items]
+ACTIES = kamers[speler.location][Acties]
+RICHTINGEN = kamers[speler.location][Richtingen]
+
 
 #speler verplaatsen
 def move_player(move_dest):
 	speler.location = move_dest
 	print_location()
 
-
-
-#de gameloop
-ITEMS = kamers[speler.location][Items]
-ACTIES = kamers[speler.location][Acties]
-RICHTINGEN = kamers[speler.location][Richtingen]
-
 # print locatie 
 def print_location():
-  os.system('clear')
-  print(kamers[speler.location][Titel])
-  print("=" * 40)
-  print(kamers[speler.location][Beschrijving])
-  print("=" * 40)
-  print("Op deze locatie liggen de volgende items:")
-  for (i) in (ITEMS):
-    print(i)
-  print("~" * 30)
-  print("je kunt de volgende dingen doen:")
-  for (a) in (ACTIES):
-    print(a)
-  print("~" * 30)
-  print("je kunt de volgende richtingen op:")
-  for (x) in (RICHTINGEN):
-    print (x)
-  print("~" * 30)
-  keuze()
-
+  if kamers[speler.location][Dood] == ("no") and kamers[speler.location][Win] == ("no"):
+    os.system('clear')
+    print(kamers[speler.location][Titel])
+    print("=" * 40)
+    print(kamers[speler.location][Beschrijving])
+    print("=" * 40)
+    print("Op deze locatie liggen de volgende items:")
+    for (i) in (ITEMS):
+      print(i)
+    print("~" * 30)
+    print("je kunt de volgende dingen doen:")
+    for (a) in (ACTIES):
+      print(a)
+    print("~" * 30)
+    print("je kunt de volgende richtingen op:")
+    for (x) in (RICHTINGEN):
+      print (x)
+    print("~" * 30)
+    keuze()
+  elif kamers[speler.location][Dood] == ("yes") and speler.health == "100%":
+    os.system('clear')
+    speler.health = "50%"
+    print("=" * 40)
+    print(kamers[speler.location][Beschrijving])
+    print("=" * 40)
+    time.sleep(10)
+    move_dest = kamers[speler.location][A]
+    move_player(move_dest)
+  elif kamers[speler.location][Dood] == ("yes") and speler.health == "50%":
+    os.system('clear')
+    print("=" * 40)
+    print(kamers[speler.location][Doodsbeschrijving])
+    print("=" * 40)
+    time.sleep(10)
+    dood()
+  elif kamers[speler.location][Win] == ("yes"):
+    os.system('clear')
+    print("yay")
 
 #keuzemenu
 def keuze():
