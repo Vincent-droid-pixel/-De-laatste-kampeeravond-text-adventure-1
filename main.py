@@ -16,18 +16,25 @@ kamers = {
     "windrichtingen" : ["noorden", "oosten"],
     "aangrenzende gebieden" : ["BrugNaarNoorden", "RivierpadNaarOosten"],
     "acties" : ["g (get item)", "d (drop item)", "h (health)", "i (inventory)"],
+    "death" : "no",
+    "win" : "no"
   },
   "BrugNaarNoorden" : {
     "titel" : "de brug",
-    "beschrijving" : "Je loopt er overheen. De brug breekt door en je valt in het ijskoude water. Je weet er uiteindelijk nog wel uit te klimmen, maar uiteindelijk ga je toch dood door onderkoeling.",
+    "doodsbeschrijving" : "Je loopt er overheen. De brug breekt door en je valt in het ijskoude water. Je weet er uiteindelijk nog wel uit te klimmen, maar uiteindelijk ga je toch dood door onderkoeling.",
+    "nietdoodsbeschrijving" : "Je loopt er overheen. De brug breekt door en je valt in het ijskoude water. Je weet er uiteindelijk nog wel uit te klimmen en overleeft het maar net.",
     "windrichtingen" : "",
-    "acties" : ""
+    "acties" : "",
+    "death" : "yes",
+    "win" : "no"
   },
   "RivierpadNaarOosten" :{
     "titel" : "Het rivierpad naar het Oosten",
     "beschrijving" : "Je loopt langs het pad en komt een klein meisje tegen in witte gewaden. Het lijkt bijna alsof ze gloeit zo licht zijn haar gewaden. Zodra het meisje je ziet loopt ze weg richting het zuiden. Je twijfelt of je haar zal volgen of dat je het rivier pad moet volgen.",
     "windrichtingen" : "z, o",
-    "acties" : ["g (get item)", "d (drop item)", "h (health)", "i (inventory)"]
+    "acties" : ["g (get item)", "d (drop item)", "h (health)", "i (inventory)"],
+    "death" : "no",
+    "win" : "no"
   }
 }
 
@@ -48,6 +55,19 @@ def inventory():
   elif choice == "h":
     health()
 
+#doodsfunctie
+def dood():
+  print("wil je nog een keer spelen?")
+  choice = (input())
+  if choice.lower == "ja":
+    NaamInvullen()
+  elif choice.lower == "nee":
+    sys.exit
+  else:
+    print("vul een geldig antwoord in!")
+    print("___________________________________________")
+    dood()
+
 #health laten zien
 def health():
   print ("                      |- - - - - - - - - - - - - - - -")
@@ -65,6 +85,19 @@ def health():
   elif choice == "h":
     health()
 
+#quitmenu
+def quit():
+  os.system('clear')
+  choice = (input("weet je zeker dat je wil stoppen?"))
+  if choice.lower == "ja":
+    hoofdmenu()
+  elif choice.lower == "nee":
+    game()
+  else:
+    print("vul een geldig antwoord in!")
+    print("______________________________")
+    quit()
+
 
 #de gameloop
 def game(gebied):
@@ -73,34 +106,54 @@ def game(gebied):
   #titel en beschrijving van kamer verkrijgen#
   titel = locatie["titel"]
   beschrijving = locatie["beschrijving"]
+  #nietdoodsbeschrijving = locatie["nietdoodsbeschrijving"]
   windrichtingen = locatie["windrichtingen"]
   acties = locatie["acties"]
+  dood = locatie["death"]
+  winnen = locatie["win"]
 
   #kamer beschrijven
   os.system('clear')
-  print("=============================================")
-  print(f"je bent bij {titel}")
-  print(beschrijving)
-  print("=============================================")
-  print("de windrichtingen waar je heen kan gaan zijn:")
-  for (i, w) in enumerate(windrichtingen):
-    print (i+1, w)
-  print("~~~~~~~~~~~~~~~~~~~~~~~~~~~~")
-  print("de acties die je kunt uitvoeren zijn:")
-  for (a) in (acties):
-    print(a)
-  print("~~~~~~~~~~~~~~~~~~~~~~~~~~~~")
-  #choice = int(input('Typ je keuze:'))
-  #(gebied) = "aangrenzende gebieden"[choice - 1]
-  choice = (input("typ wat je wil doen: "))
-  if choice ==  "i":
-    inventory()
-  #elif choice == "g":
-  #  getitem()
-  #elif choice == "d":
-  #  dropitem()
-  elif choice == "h":
-    health()
+  doodgaan = (dood)
+
+
+    
+  if doodgaan == "no":
+    print("=============================================")
+    print(f"je bent bij {titel}")
+    print(beschrijving)
+    print("=============================================")
+    print("de windrichtingen waar je heen kan gaan zijn:")
+    for (i, w) in enumerate(windrichtingen):
+      print (i+1, w)
+    print("~~~~~~~~~~~~~~~~~~~~~~~~~~~~")
+    print("de acties die je kunt uitvoeren zijn:")
+    for (a) in (acties):
+      print(a)
+    print("~~~~~~~~~~~~~~~~~~~~~~~~~~~~")
+    #choice = int(input('Typ je keuze:'))
+    #(gebied) = "aangrenzende gebieden"[choice - 1]
+    choice = (input("typ wat je wil doen: "))
+    if choice ==  "i":
+      inventory()
+    #elif choice == "g":
+    #  getitem()
+    #elif choice == "d":
+    #  dropitem()
+    elif choice == "h":
+      health()
+    elif choice == "q":
+      quit()
+    else:
+      gebied = locatie
+      game(gebied)
+  elif doodgaan == "yes" and playerhealth == "100%":
+    #playerhealth = "50%"
+    print(nietdoodsbeschrijving)
+  elif doodgaan == "yes" and playerhealth == "50%":
+    print(beschrijving)
+    time.sleep(5)
+    dood()
   
 
 
@@ -163,7 +216,7 @@ def help():
   print("Je hebt verschillende controls in deze text adventure. Zo kun je met ‘get item [g]’ en ‘drop item [d]’ items oppakken en laten vallen / neerleggen. Verder kan je met ‘inventory [i]’ alle items zien die je hebt opgepakt. Ook kan je nog met de gegeven windrichtingen (Noord [n], Oost [o], Zuid [z], West [w]) bij elk gebied, naar het volgende gebied gaan. (Ten slotte kan je met ‘health [h]’ je health zien.) Al deze controls kan je tijdens het gehele spel gebruiken.")
   print("=============================================")
   choice = input(""" Typ 'menu' als je terug naar het menu wil gaan: """)
-  if choice.lower() == "Menu":
+  if choice.lower() == "menu":
     os.system('clear')
     hoofdmenu()
   else:
