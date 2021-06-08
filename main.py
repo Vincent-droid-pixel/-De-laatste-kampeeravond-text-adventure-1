@@ -2,7 +2,8 @@ import os
 import sys
 import time
 
-items = ["appel"]
+#health
+playerhealth = "100%"
 
 #inventory
 playerinventory = ["kompas"]
@@ -32,11 +33,38 @@ kamers = {
 
 #inventory laten zien
 def inventory():
-  os.system('clear')
+  print ("- - - - - - - - - - - - - - - -")
   print ("dit heb je op dit moment bij je:")
   print (playerinventory)
+  print ("-------------------------------")
   time.sleep(3)
-  game("RivierMetBrug")
+  choice = (input("typ wat je wil doen: "))
+  if choice ==  "i":
+    inventory()
+  #elif choice == "g":
+  #  getitem()
+  #elif choice == "d":
+  #  dropitem()
+  elif choice == "h":
+    health()
+
+#health laten zien
+def health():
+  print ("- - - - - - - - - - - - - - - -")
+  print ("dit is hoeveel % health je op dit moment hebt:")
+  print (playerhealth)
+  print ("-------------------------------")
+  time.sleep(3)
+  choice = (input("typ wat je wil doen: "))
+  if choice ==  "i":
+    inventory()
+  #elif choice == "g":
+  #  getitem()
+  #elif choice == "d":
+  #  dropitem()
+  elif choice == "h":
+    health()
+
 
 #de gameloop
 def game(gebied):
@@ -71,8 +99,8 @@ def game(gebied):
   #  getitem()
   #elif choice == "d":
   #  dropitem()
-  #elif choice == "h":
-  #  health()
+  elif choice == "h":
+    health()
   
 
 
