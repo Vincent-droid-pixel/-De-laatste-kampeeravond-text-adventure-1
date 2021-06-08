@@ -114,9 +114,8 @@ while True:
       print(i)
     print("Welk item wil je oppakken? (of typ [terug] als je terug wil gaan)")
     #welke items je kan oppakken \/
-    MogelijkeOpties = ["machete", "ehbo-kit", "zaklamp"]
     choice = input("")
-    if choice.lower() in MogelijkeOpties:
+    if choice.lower() in kamers[speler.location][Items]:
       kamers[speler.location][Items].remove(choice.lower())
       speler.inventory.append(choice.lower())
       speler.usable.append(choice.lower())
@@ -142,7 +141,6 @@ while True:
       print(i)
     print("welk item wil je droppen?(of typ [terug] om terug te gaan)")
     #welke items je kan droppen \/
-    MogelijkeOpties = ["machete", "ehbo-kit", "zaklamp"]
     choice = input("")
     if choice.lower() == "kompas":
       os.system("clear")
@@ -155,7 +153,7 @@ while True:
         dood()
       else:
         dood()
-    elif choice.lower() in MogelijkeOpties:
+    elif choice.lower() in speler.inventory:
       kamers[speler.location][Items].append(choice.lower())
       speler.inventory.remove(choice.lower())
       speler.usable.remove(choice.lower())
