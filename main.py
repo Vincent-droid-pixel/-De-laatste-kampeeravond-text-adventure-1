@@ -23,14 +23,14 @@ while True:
       speler.typemachine = "true"
       os.system('clear')
       print("typemachine animatie staat nu aan")
-      time.sleep(2.5)
+      time.sleep(2)
       os.system('clear')
       hoofdmenu()
     elif choice.lower() == "nee":
       speler.typemachine = "false"
       os.system('clear')
       print("typemachine animatie staat nu uit")
-      time.sleep(2.5)
+      time.sleep(2)
       os.system('clear')
       hoofdmenu()
     else:
@@ -47,14 +47,14 @@ while True:
       speler.typemachine = "true"
       os.system('clear')
       print("typemachine animatie staat nu aan")
-      time.sleep(2.5)
+      time.sleep(2)
       os.system('clear')
       print_location()
     elif choice.lower() == "nee":
       speler.typemachine = "false"
       os.system('clear')
       print("typemachine animatie staat nu uit")
-      time.sleep(2.5)
+      time.sleep(2)
       os.system('clear')
       print_location()
     else:
@@ -90,19 +90,18 @@ while True:
   speler = speler()
 
 
-
-  #inventory laten zien
+      #inventory laten zien
   def inventory():
     os.system('clear')
     print ("- - - - - - - - - - - - - - - - \ndit heb je op dit moment bij je: \n" + speler.inventory, "\n-------------------------------")
-    time.sleep(5)
+    time.sleep(3)
     print_location()
 
   #health laten zien
   def health():
     os.system('clear')
     print ("- - - - - - - - - - - - - - - - \ndit is hoeveel health je op dit moment hebt: \n",speler.health,"\n-------------------------------")
-    time.sleep(5)
+    time.sleep(3)
     print_location()
 
   #get item functie 
@@ -115,15 +114,27 @@ while True:
     if choice.lower() == "machete":
       kamers[speler.location][Items].remove("machete")
       speler.inventory.append("machete")
-      print("je hebt het item opgepakt")
-      time.sleep(2)
-      print_location()
+      print("je hebt het item opgepakt. Druk op [enter] om verder te gaan")
+      choice = input('')
+      if choice.lower() == "":
+        print_location()
+      else:
+        print_location()
+    elif choice.lower() == "ehbo-kit":
+      kamers[speler.location][Items].remove("EHBO-kit")
+      speler.inventory.append("EHBO-kit")
+      print("je hebt het item opgepakt. Druk op [enter] om verder te gaan")
+      choice = input('')
+      if choice.lower() == "":
+        print_location()
+      else:
+        print_location()
     elif choice.lower() == "terug":
       print_location()
     else:
       os.system("clear")
       print("vul een item in dat aanwezig is in de kamer!")
-      time.sleep(3)
+      time.sleep(1.5)
       get()
 
   #drop item functie
@@ -131,38 +142,71 @@ while True:
     os.system("clear")
     print("Je hebt de volgende items bij je:")
     print(speler.inventory)
-    print("welk item wil je droppen?")
+    print("welk item wil je droppen?(of typ [terug] om terug te gaan)")
     choice = input("")
     if choice.lower() == "kompas":
       os.system("clear")
       print("=" * 40)
       print("Nadat je het kompas hebt weggegooid verdwaal je in het bos en niemand heeft je daarna ooit nog gevonden.")
       print("=" * 40)
-      time.sleep(4)
-      dood()
+      print("Typ [enter] om door te gaan")
+      choice = input('')
+      if choice.lower() == "":
+        dood()
+      else:
+        dood()
     elif choice.lower() == "machete":
       os.system("clear")
       kamers[speler.location][Items].append("machete")
       speler.inventory.remove("machete")
-      print("je hebt het item gedropt")
-      time.sleep(2)
+      print("je hebt het item gedropt. Druk op [enter] om verder te gaan")
+      choice = input('')
+      if choice.lower() == "":
+        print_location()
+      else:
+        print_location()
+    elif choice.lower() == "ehbo-kit":
+      kamers[speler.location][Items].append("EHBO-kit")
+      speler.inventory.remove("EHBO-kit")
+      print("je hebt het item gedropt. Druk op [enter] om verder te gaan")
+      choice = input('')
+      if choice.lower() == "":
+        print_location()
+      else:
+        print_location()
+    elif choice.lower() == "terug":
       print_location()
     else:
       os.system("clear")
       print("vul een item in dat je bij je hebt!")
-      time.sleep(2.5)
+      time.sleep(1.5)
       drop()
+
+
+  #use item functie#
+  def use():
+    print("Je hebt de volgende items bij je:")
+    print("Welk item wil je gebruiken? (of typ terug om terug te gaan)")
+    choice = input()
+    if choice.lower() == "ehbo-kit":
+      speler.inventory.remove('EHBO-kit')
+      print("Je hebt de EHBO-kit gebruikt.")
+      speler.health = "100%"
+      print_location()
+    elif choice.lower() == "terug":
+      print_location()
+    else:
+      print("vul een geldig antwoord in!")
+      use()                                      
+
+
+
+
 
 
   ###DE GAME-LOOP###
 
-
-  #speler verplaatsen
-  def move_player(move_dest):
-    speler.location = move_dest
-    print_location()
-
-  # print locatie waarbij rekening wordt gehouden of er bij opties is aangezet dat er een typemachine animatie is of niet
+ # print locatie waarbij rekening wordt gehouden of er bij opties is aangezet dat er een typemachine animatie is of niet
   def print_location():
     if kamers[speler.location][Dood] == ("no") and kamers[speler.location][Win] == ("no"):
       if kamers[speler.location][Benodigdheden] in speler.inventory:
@@ -228,10 +272,16 @@ while True:
       else:
         os.system('clear')
         print("Je hebt een item nodig om naar deze kamer te gaan")
-        time.sleep(2)
-        move_dest = kamers[speler.location][E]
-        move_player(move_dest)
-        print_location()
+        print("Druk op [enter] om terug te gaan")
+        choice = input("")
+        if choice.lower() == "":
+          move_dest = kamers[speler.location][E]
+          move_player(move_dest)
+          print_location()
+        else:
+          move_dest = kamers[speler.location][E]
+          move_player(move_dest)
+          print_location()
     elif kamers[speler.location][Dood] == ("yes") and speler.health == "100%":
       os.system('clear')
       speler.health = "50%"
@@ -263,8 +313,12 @@ while True:
       elif speler.typemachine == "false":
         print(kamers[speler.location][Doodsbeschrijving])
       print("=" * 40)
-      time.sleep(8)
-      dood()
+      print("Druk op [enter] om door te gaan")
+      choice = input('')
+      if choice.lower() == "":
+        dood()
+      else:
+        dood()
     elif kamers[speler.location][Win] == ("yes"):
       os.system('clear')
       print("=" * 40)
@@ -277,15 +331,21 @@ while True:
         print(kamers[speler.location][Beschrijving])
       print("=" * 40)
 
+  #speler verplaatsen
+  def move_player(move_dest):
+    speler.location = move_dest
+    print_location()
+
+ 
   #keuzemenu
   def keuze():
     print ('Wat wil je doen?')
     option = input('')
-    MogelijkeOpties = "nozw?/igdhq"
+    MogelijkeOpties = "nozw?/igdhqu"
     if len(option) != 1 or option not in MogelijkeOpties:
       os.system('clear')
       print("Vul aub een geldig antwoord in!")
-      time.sleep(1.5)
+      time.sleep(1)
       os.system('clear')
       print_location()
       keuze()
@@ -316,6 +376,8 @@ while True:
         health()
     elif option.lower() == "q":
         quit()
+    elif option.lower() == "u":
+      use()
   #========================================
 
   #MENU'S
@@ -337,7 +399,7 @@ while True:
       sys.exit
     else:
       print("vul een geldig antwoord in!")
-      time.sleep(1.5)
+      time.sleep(1)
       dood()
 
   #quit-menu
@@ -376,9 +438,14 @@ while True:
 
     format_string = "Hallo %s, leuk dat je deze text adventure speelt!"
     print(format_string % speler.naam)
-    time.sleep(2)
-    os.system('clear')
-    intro()
+    print("druk op [enter] om door te gaan")
+    choice = input('')
+    if choice.lower() == "":
+      os.system('clear')
+      intro()
+    else:
+      os.system('clear')
+      intro()
     
   #help-menu voor in een kamer
   def help_in_game():
@@ -444,6 +511,6 @@ while True:
       os.system('clear')
       print("============================================= \n|       vul een geldig antwoord in!!!       |")
       hoofdmenu()
-                                          
+
 
   hoofdmenu()
