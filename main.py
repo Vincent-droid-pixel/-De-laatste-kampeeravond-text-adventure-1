@@ -9,7 +9,6 @@ import time
 
 #TO-do
 # - overige kamers toevoegen in data
-# - forloops weghalen
 # - bugs fixen
 
 #opties-menu 
@@ -66,8 +65,8 @@ speler = speler()
 #kamers
 kamers = {
   "RivierMetBrug" : {
-    "titel" : "een rivier met een brug.",
-    "beschrijving" : "Het is een gammele houten brug die naar het noorden over de rivier loopt. Je weet niet of je er eigenlijk wel overheen kunt lopen zonder dat hij doorbreekt. Je ziet ook nog een pad langs het water stroomopwaarts richting het oosten lopen.",
+    "titel" : "Je komt bij een rivier met een brug.",
+    "beschrijving" : "Het is een gammele houten brug die naar het noorden over de rivier loopt. \nJe weet niet of je er eigenlijk wel overheen kunt lopen zonder dat hij doorbreekt. \nJe ziet ook nog een pad langs het water stroomopwaarts richting het oosten lopen.",
     "richtingen" : "N: De brug naar het noorden \nO: Het rivierpad naar het oosten",
     A : "BrugNaarNoorden",
     B : "RivierpadNaarOosten",
@@ -89,15 +88,36 @@ kamers = {
   "RivierpadNaarOosten" :{
     "titel" : "Het rivierpad naar het Oosten",
     "beschrijving" : "Je loopt langs het pad en komt een klein meisje tegen in witte gewaden. Het lijkt bijna alsof ze gloeit zo licht zijn haar gewaden. Zodra het meisje je ziet loopt ze weg richting het zuiden. Je twijfelt of je haar zal volgen of dat je het rivier pad moet volgen.",
-    "richtingen" : ["A: Verder naar het oosten", "B: Meisje naar zuiden", "C: De rivier bij de brug"],
-    A : "VerderNaarOosten",
-    B : "MeisjeZuiden",
-    C : "RivierMetBrug",
-    D : "RivierpadNaarOosten",
+    "richtingen" : "O Verder naar het oosten \nZ: Meisje naar zuiden \nW: De rivier bij de brug",
+    A : "RivierpadNaarOosten",
+    B : "RotsmuurInOosten",
+    C : "MeisjeZuiden",
+    D : "RivierMetBrug",
     "items" : ["hakblok"],
     "acties" : "g/d (get/drop item), \nh (health), \ni (inventory), \n? (help), \nq (quit)",
     "dood" : "no",
     "win" : "no"
+  },
+  "MeisjeZuiden" :{
+    "titel" : "Meisje in het zuiden",
+    "doodsbeschrijving" : "Je komt op een open plaats en ziet het meisje nog net verdwijnen tussen de bosjes. Opeens komt er uit diezelfde bosjes een groot gruwelijk monster (details nog uitwerken). Het monster verslindt je met huid en haar en je gaat dood.",
+    "beschrijving" : "Je komt op een open plaats en ziet het meisje nog net verdwijnen tussen de bosjes. \nOpeens komt er uit diezelfde bosjes een groot gruwelijk monster (details nog uitwerken). \nJe weet net op tijd weg te rennen en komt weer uit bij het rivierpad",
+    A : "RivierpadNaarOosten",
+    "dood" : "yes",
+    "win" : "no"
+  },
+  "RotsmuurInOosten" :{
+    "titel" : "Rotsmuur in het oosten",
+    "beschrijving" : "Je komt bij een stenen helling van een berg die te steil is om te klimmen. \nDaar waar de rots overgaat in het gras zie je iets liggen. \nAls je goed kijkt blijkt het dat het een lijk is. \nMaar het is geen gewoon lijk. \nHet lijk is vastgegroeid aan de rots door een of andere schimmel. \nJe ziet dat het lijk iets in zijn handen heeft. \nHet blijkt een machete te zijn. \nDaarmee kun je planten wegslaan. \nJe kan vanaf hier alleen naar het zuiden want in het noorden loopt de rivier en in het oosten is de rotsmuur.",
+    "richtingen" : "Z: Pad langs de rotsmuur naar het zuiden \nW: Rivierpad in het westen" ,
+    A : "RotsmuurInOosten",
+    B : "RotsmuurInOosten",
+    C : "PadLangsRotsmuur",
+    D : "RivierpadNaarOosten",
+    "items" : ["Machette"],
+    "acties" : "g/d (get/drop item), \nh (health), \ni (inventory), \n? (help), \nq (quit)",
+    "dood" : "no",
+    "win" : "no",
   }
 }
 
@@ -125,6 +145,8 @@ def get():
   if choice.lower() == "":
     kamers[speler.location][Items].remove("")
     speler.inventory.append("")
+    print("je hebt het item opgepakt")
+    time.sleep(2)
     print_location()
   elif choice.lower() == "terug":
     print_location()
@@ -152,6 +174,8 @@ def drop():
     os.system("clear")
     kamers[speler.location][Items].append("")
     speler.inventory.remove("")
+    print("je hebt het item gedropt")
+    time.sleep(2)
     print_location()
   else:
     os.system("clear")
