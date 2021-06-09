@@ -594,22 +594,26 @@ def NaamInvullen():
 
   speler_naam = input()
   speler.naam = speler_naam
-
-  format_string = "Hallo %s, leuk dat je deze text adventure speelt!"
-  print(format_string % speler.naam)
-  if speler.naam == "sannAH":
-    win()
-  elif speler.naam.lower() == "vinciento":
-    win()
+  if len(speler.naam) == 0:
+    print("vul een naam in!")
+    time.sleep(1)
+    NaamInvullen()
   else:
-    print("druk op [enter] om door te gaan")
-    choice = input('')
-    if choice.lower() == "":
-      os.system('clear')
-      intro()
+    format_string = "Hallo %s, leuk dat je deze text adventure speelt!"
+    print(format_string % speler.naam)
+    if speler.naam == "sannAH":
+      win()
+    elif speler.naam.lower() == "vinciento":
+      win()
     else:
-      os.system('clear')
-      intro()
+      print("druk op [enter] om door te gaan")
+      choice = input('')
+      if choice.lower() == "":
+        os.system('clear')
+        intro()
+      else:
+        os.system('clear')
+        intro()
   
 #help-menu voor in een kamer
 def help_in_game():
