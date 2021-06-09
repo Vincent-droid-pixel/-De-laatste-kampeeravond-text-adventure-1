@@ -40,9 +40,9 @@ kamers = {
     "BrugNaarNoorden": {
         "titel": "De brug",
         "doodsbeschrijving":
-        "Je loopt er overheen. De brug breekt door en je valt in het ijskoude water. Je weet er uiteindelijk nog wel uit te klimmen, maar uiteindelijk ga je toch dood door onderkoeling.",
+        "Je loopt er overheen. De brug breekt door en je valt in het \nijskoude water. Je weet er uiteindelijk nog wel uit te \nklimmen, maar uiteindelijk ga je toch dood door onderkoeling.",
         "beschrijving":
-        "Je loopt er overheen. De brug breekt door en je valt in het ijskoude water. Je weet er uiteindelijk nog wel uit te klimmen en overleeft het maar net. Je gaat snel terug naar het vorige kruispunt",
+        "Je loopt er overheen. De brug breekt door en je valt in het \nijskoude water. Je weet er uiteindelijk nog wel uit te \nklimmen en overleeft het maar net. Je gaat snel terug naar \nhet vorige kruispunt.",
         A: "RivierMetBrug",
         "benodigdheden": "kompas",
         "dood": "yes",
@@ -51,7 +51,7 @@ kamers = {
     "StenenPlein": {
         "titel": "Stenen pleintje",
         "beschrijving":
-        "Je loopt langs het pad en komt op een stenen pleintje. je komt een klein meisje tegen in witte gewaden. Het lijkt bijna alsof ze gloeit zo licht zijn haar gewaden. Zodra het meisje je ziet loopt ze weg richting het zuiden. Je twijfelt of je haar zal volgen of dat je het rivier pad moet volgen. Verder zie je ook nog bij een stenen pilaar een EHBO-kit liggen.",
+        "Je loopt langs het pad en komt op een stenen pleintje. je \nkomt een klein meisje tegen in witte gewaden. Het lijkt \nbijna alsof ze gloeit zo licht zijn haar gewaden. Zodra het \nmeisje je ziet loopt ze weg richting het zuiden. Je twijfelt\n of je haar zal volgen of dat je het rivier pad moet volgen. \nVerder zie je ook nog bij een stenen pilaar een EHBO-kit \nliggen.",
         "beschrijving2": "",
         "richtingen":
         "O: Verder naar het oosten \nZ: Meisje naar zuiden \nW: De rivier bij de brug",
@@ -69,9 +69,9 @@ kamers = {
     "MeisjeZuiden": {
         "titel": "Meisje",
         "doodsbeschrijving":
-        "Je komt op een open plaats en ziet het meisje nog net verdwijnen tussen de bosjes. Opeens komt er uit diezelfde bosjes een groot gruwelijk monster (details nog uitwerken). Het monster verslindt je met huid en haar en je gaat dood.",
+        "Je komt op een open plaats en ziet het meisje nog net \nverdwijnen tussen de bosjes. Opeens komt er uit diezelfde \nbosjes een groot gruwelijk monster (details nog uitwerken). \nHet monster verslindt je met huid en haar en je gaat dood.",
         "beschrijving":
-        "Je komt op een open plaats en ziet het meisje nog net verdwijnen tussen de bosjes. \nOpeens komt er uit diezelfde bosjes een groot gruwelijk monster (details nog uitwerken). \nJe weet net op tijd weg te rennen en komt weer uit bij het rivierpad \n",
+        "Je komt op een open plaats en ziet het meisje nog net \nverdwijnen tussen de bosjes. Opeens komt er uit diezelfde \nbosjes een groot gruwelijk monster (details nog uitwerken). \nJe weet net op tijd weg te rennen en komt weer uit bij het \nrivierpad \n",
         A: "StenenPlein",
         "benodigdheden": "kompas",
         "dood": "yes",
@@ -80,7 +80,7 @@ kamers = {
     "RotsmuurInOosten": {
         "titel": "Rotsmuur",
         "beschrijving":
-        "Je komt bij een stenen helling van een berg die te steil is om te klimmen. \nDaar waar de rots overgaat in het gras zie je iets liggen. \nAls je goed kijkt blijkt het dat het een lijk is. \nMaar het is geen gewoon lijk. \nHet lijk is vastgegroeid aan de rots door een of andere schimmel. \nJe ziet dat het lijk iets in zijn handen heeft. \nHet blijkt een machete te zijn. \nDaarmee kun je planten wegslaan. \nJe kan vanaf hier alleen naar het zuiden want in het noorden loopt de rivier en in het oosten is de rotsmuur.",
+        "Je komt bij een stenen helling van een berg die te steil is \nom te klimmen. Daar waar de rots overgaat in het gras zie je\n iets liggen. Als je goed kijkt blijkt het dat het een lijk \nis. Maar het is geen gewoon lijk. Het lijk is vastgegroeid \naan de rots door een of andere schimmel. Je ziet dat het \nlijk iets in zijn handen heeft. Het blijkt een machete te \nzijn. Daarmee kun je planten wegslaan. Je kan vanaf hier \nalleen naar het zuiden want in het noorden loopt de rivier \nen in het oosten is de rotsmuur.",
         "beschrijving2": "",
         "richtingen":
         "Z: Pad langs de rotsmuur naar het zuiden \nW: Rivierpad in het westen",
@@ -98,7 +98,7 @@ kamers = {
     "PadLangsRotsmuur": {
         "titel": "Het pad langs de rotsmuur",
         "beschrijving":
-        "Je loopt op het pad en je ziet een verlaten huisje. \nJe loopt er naar toe en je betwijfelt of het wel een goede keuze is om naar binnen te gaan. \nJe denkt bij jezelf: “In horrorfilms zijn dit altijd de plekken waar het fout gaat.” \nDe ingang van het huisje is ten zuiden van jou. \nJe kan ook om het huisje heen via een pad ten westen van jou.",
+        "Je loopt op het pad en je ziet een verlaten huisje. Je loopt\n er naar toe en je betwijfelt of het wel een goede keuze is \nom naar binnen te gaan. Je denkt bij jezelf: “In horrorfilms\n zijn dit altijd de plekken waar het fout gaat.” De ingang \nvan het huisje is ten zuiden van jou. Je kan ook om het \nhuisje heen via een pad ten westen van jou.",
         "beschrijving2": "",
         "richtingen":
         "N: De Rotsmuur \nO: Op de rotsmuur \nZ: Het huisje in het zuiden binnengaan \nW: Het pad om het huisje heen",
@@ -115,8 +115,8 @@ kamers = {
     },
   "OpDeRotsmuur": {
         "titel": "Op de rotsmuur",
-        "beschrijving": "Je loopt richting de rotsmuur. Je bent aan het denken over hoe je deze muur gaat beklimmen. Dan besef je dat je nog dat touw hebt wat je had gevonden achter het huisje. Je klimt over de rotsmuur en staat nu op een hoog stuk grond. In het Noorden zie je een bos waar je een machete voor nodig hebt en in het oosten zie je een vallei.",
-        "beschrijving2": "Je staat boven op de rotsmuur. In het westen hangt nogsteeds het touw dat je hebt opgehangen.",
+        "beschrijving": "Je loopt richting de rotsmuur. Je bent aan het denken over \nhoe je deze muur gaat beklimmen. Dan besef je dat je nog dat\n touw hebt wat je had gevonden achter het huisje. Je klimt \nover de rotsmuur en staat nu op een hoog stuk grond. In het \nNoorden zie je een bos waar je een machete voor nodig hebt \nen in het oosten zie je een vallei.",
+        "beschrijving2": "Je staat boven op de rotsmuur. In het westen hangt nogsteeds\n het touw dat je hebt opgehangen.",
         "richtingen": "N: Bos \nO: Vallei \nW: Pad langs de rotsmuur",
         A: "Bos",
         B: "Vallei",
@@ -131,7 +131,7 @@ kamers = {
     },
   "Vallei": {
         "titel": "De vallei",
-        "beschrijving": "Je loopt de vallei binnen. Het is er prachtig!!! Je ziet overal eenhoorns en regenbogen. De bomen zijn gemaakt van suikerspin en de meren zijn gevuld met limonade. Het liefst blijf je voor altijd hier. Helaas kan dat niet. Je kan alleen weer naar dezelfde kant als waar je vandaan kwam.",
+        "beschrijving": "Je loopt de vallei binnen. Het is er prachtig!!! Je ziet \noveral eenhoorns en regenbogen. De bomen zijn gemaakt van \nsuikerspin en de meren zijn gevuld met limonade. Het liefst \nblijf je voor altijd hier. Helaas kan dat niet. Je kan \nalleen weer naar dezelfde kant als waar je vandaan kwam.",
         "beschrijving2": "",
         "richtingen": "W: Boven op de rotsmuur",
         A: "Vallei",
@@ -147,7 +147,7 @@ kamers = {
     },
   "Bos": {
         "titel": "Het bos",
-        "beschrijving": "Je loopt richting het bos. De doornen en uitstekende takken doen je gedachtes niet veel goeds, totdat je bedenkt dat je nog die machete hebt die je gevonden hebt in de grot! “Deze tocht heeft wel lang genoeg geduurd..” denk je. Je gebruikt je laatste beetje kracht en slaat je weg door het bos heen met de machete. Je ziet de de tent waar je vrienden in liggen.",
+        "beschrijving": "Je loopt richting het bos. De doornen en uitstekende takken \ndoen je gedachtes niet veel goeds, totdat je bedenkt dat je \nnog die machete hebt die je gevonden hebt in de grot! “Deze \ntocht heeft wel lang genoeg geduurd..” denk je. Je gebruikt \nje laatste beetje kracht en slaat je weg door het bos heen \nmet de machete. Je ziet de de tent waar je vrienden in \nliggen.",
         "beschrijving2": "",
         "richtingen": "",
         A: "",
@@ -164,7 +164,7 @@ kamers = {
     "Huisje": {
         "titel": "In het huisje",
         "beschrijving":
-        "Je besluit om naar binnen te gaan. \nBij je eerste stap in het huis hoor je meteen de planken onder je voeten kraken. \nJe vraagt je af hoe oud dit huis eigenlijk is. \nOpeens hoor je een piano spelen in een kamer ten oosten van jou. \nJe weet niet of je daar heen moet gaan, maar misschien vind je dan eindelijk iemand anders in dit vreselijke bos. \nJe kan ook naar het zuiden de trap af naar de kelder.",
+        "Je besluit om naar binnen te gaan. Bij je eerste stap in het\n huis hoor je meteen de planken onder je voeten kraken. Je \nvraagt je af hoe oud dit huis eigenlijk is. Opeens hoor je \neen piano spelen in een kamer ten oosten van jou. Je weet \nniet of je daar heen moet gaan, maar misschien vind je dan \neindelijk iemand anders in dit vreselijke bos. Je kan ook naar \nhet zuiden de trap af naar de kelder.",
         "beschrijving2": "",
         "richtingen":
         "N: Het huisje uit \nO: De kamer met de pianomuziek \nZ: De keldertrap af",
@@ -182,7 +182,7 @@ kamers = {
     "Kelder": {
         "titel": "De kelder",
         "beschrijving":
-        "Je staat in de kelder. Je ziet hier wat botten liggen en wat tonnen waarvan je hoopt dat er gewoon wijn in zit en geen bloed. (Oh wat heb je toch een grote fantasie.) Verder zie je als je goed kijkt opeens een tunnel aan de andere kant van de kelder. Het ziet er erg donker uit",
+        "Je staat in de kelder. Je ziet hier wat botten liggen en wat\n tonnen waarvan je hoopt dat er gewoon wijn in zit en geen \nbloed. (Oh wat heb je toch een grote fantasie.) Verder zie je als \nje goed kijkt opeens een tunnel aan de andere kant \nvan de kelder. Het ziet er erg donker uit.",
         "beschrijving2": "",
         "richtingen": "N: Weer uit de kelder \n Z: De donkere tunnel in",
         A: "Huisje",
@@ -285,7 +285,7 @@ kamers = {
     "Achtertuin": {
         "titel": "Achtertuin",
         "beschrijving":
-        "Je komt op een open veld en het gezang is hier veel duidelijker te horen. Zonder het zelf door te hebben word je gelokt door een sirene. De sirene krijgt het zover je naar haar toe te lokken, zodat je op 1 meter afstand van haar staat. De sirene kijkt met haar witte zielloze ogen naar je. Dan opeens voelt het alsof je moe wordt. En als het eigenlijk al te laat is kom je erachter dat de sirene je ziel aan het opzuigen is.",
+        "Je komt op een open veld en het gezang is hier veel \nduidelijker te horen. Zonder het zelf door te hebben word je\n gelokt door een sirene. De sirene krijgt het zover je naar \nhaar toe te lokken, zodat je op 1 meter afstand van haar staat. De sirene kijkt met haar witte zielloze ogen naar je. Dan opeens voelt het alsof je moe wordt. En als het eigenlijk al te laat is kom je erachter dat de sirene je ziel aan het opzuigen is.",
         "beschrijving2": "",
         "richtingen": "N: Het pad langs het huisje",
         A: "PadLangsHuisje",
