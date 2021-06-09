@@ -115,7 +115,14 @@ def get():
   print("Welk item wil je oppakken? (of typ [terug] als je terug wil gaan)")
   #welke items je kan oppakken \/
   choice = input("")
-  if choice.lower() in kamers[speler.location][Items]:
+  if choice.lower() == "eenhoorn":
+    print("je probeert de eenhoorn op te pakken maar hij steekt je met zijn hoorn. Je gaat langzaam dood Druk op [enter] om door te gaan")
+    choice = input('')
+    if choice.lower() == "":
+      dood()
+    else:
+      dood()
+  elif choice.lower() in kamers[speler.location][Items]:
     kamers[speler.location][Items].remove(choice.lower())
     speler.inventory.append(choice.lower())
     speler.usable.append(choice.lower())
@@ -386,7 +393,7 @@ def move_player(move_dest):
 def keuze():
   print ('Wat wil je doen?')
   option = input('')
-  MogelijkeOpties = "nozw?/igdhqu"
+  MogelijkeOpties = "NnOoZzWw?/IiGgDdHhQqUu"
   if len(option) != 1 or option not in MogelijkeOpties:
     os.system('clear')
     print("Vul aub een geldig antwoord in!")
