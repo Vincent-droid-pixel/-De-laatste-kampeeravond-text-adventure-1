@@ -592,6 +592,8 @@ def NaamInvullen():
   print(format_string % speler.naam)
   if speler.naam == "sannAH":
     win()
+  elif speler.naam.lower() == "vinciento":
+    win()
   else:
     print("druk op [enter] om door te gaan")
     choice = input('')
