@@ -5,10 +5,9 @@ from Gebieden import kamers
 
 
 #TO-do
-# - overige kamers toevoegen in data
-# - verhaal afmaken
 # - bugs fixen
 # - typfouten oplossen
+# - (kamers nummeren?)
 
 
 
@@ -87,7 +86,7 @@ class speler:
         self.inventory = ["kompas"]      
         self.usable = []
         self.location = 'RivierMetBrug'
-        self.typemachine = 'false'
+        self.typemachine = 'true'
         self.bezochteKamers = [""]
         self.gewonnen = "false"
 speler = speler()
