@@ -159,8 +159,7 @@ kamers = {
     #alles vanaf dat je in het huisje komt
     "Huisje": {
         "titel": "In het huisje",
-        "beschrijving":
-        "Je besluit om naar binnen te gaan. Bij je eerste stap in het\n huis hoor je meteen de planken onder je voeten kraken. Je \nvraagt je af hoe oud dit huis eigenlijk is. Opeens hoor je \neen piano spelen in een kamer ten oosten van jou. Je weet \nniet of je daar heen moet gaan, maar misschien vind je dan \neindelijk iemand anders in dit vreselijke bos. Je kan ook naar \nhet zuiden de trap af naar de kelder.",
+        "beschrijving": "Je besluit om naar binnen te gaan. Bij je eerste stap in het\n huis hoor je meteen de planken onder je voeten kraken. Je \nvraagt je af hoe oud dit huis eigenlijk is. Opeens hoor je \neen piano spelen in een kamer ten oosten van jou. Je weet \nniet of je daar heen moet gaan, maar misschien vind je dan \neindelijk iemand anders in dit vreselijke bos. Je kan ook naar \nhet zuiden de trap af naar de kelder.",
         "beschrijving2": "",
         "richtingen":
         "N: Het huisje uit \nO: De kamer met de pianomuziek \nZ: De keldertrap af",
@@ -176,8 +175,7 @@ kamers = {
     },
     "Kelder": {
         "titel": "De kelder",
-        "beschrijving":
-        "Je staat in de kelder. Je ziet hier wat botten liggen en wat\n tonnen waarvan je hoopt dat er gewoon wijn in zit en geen \nbloed. (Oh wat heb je toch een grote fantasie.) Verder zie je als \nje goed kijkt opeens een tunnel aan de andere kant \nvan de kelder. Het ziet er erg donker uit.",
+        "beschrijving": "Je staat in de kelder. Je ziet hier wat botten liggen en wat\n tonnen waarvan je hoopt dat er gewoon wijn in zit en geen \nbloed. (Oh wat heb je toch een grote fantasie.) Verder zie je als \nje goed kijkt opeens een tunnel aan de andere kant \nvan de kelder. Het ziet er erg donker uit.",
         "beschrijving2": "",
         "richtingen": "N: Weer uit de kelder \n Z: De donkere tunnel in",
         A: "Huisje",
@@ -192,8 +190,7 @@ kamers = {
     },
     "Pianokamer": {
         "titel": "De pianokamer",
-        "beschrijving":
-        "Je loopt de kamer voorzichtig in en je ziet een platenspeler spelen. Daar kwam de pianomuziek dus vandaan! Maar wie heeft die plaat erop gelegd? Er zijn geen andere uitgangen uit de kamer behalve de deuropening waar je doorheen bent gekomen. Verder zie je een tafel met een zaklamp erop liggen.",
+        "beschrijving": "Je loopt de kamer voorzichtig in en je ziet een platenspeler\n spelen. Daar kwam de pianomuziek dus vandaan! Maar wie \nheeft die plaat erop gelegd? Er zijn geen andere uitgangen \nuit de kamer behalve de deuropening waar je doorheen bent \ngekomen. Verder zie je een tafel met een zaklamp erop \nliggen.",
         "beschrijving2": "",
         "richtingen": "W: De ingang van het huisje",
         A: "Pianokamer",
@@ -208,8 +205,7 @@ kamers = {
     },
     "Tunnel": {
         "titel": "De donkere tunnel",
-        "beschrijving":
-        "Het is erg donker en je ziet niet waar je heengaat. Gelukkig heb je die zaklamp die je in de pianokamer gevonden hebt. Je klikt op het lichtknopje en ziet nu hoe de tunnel er van binnen uitziet. Overal hangen spinnenwebben en je wil eigenlijk niet te lang in de tunnel blijven. Je ziet geen andere weg dan verder door de tunnel",
+        "beschrijving": "Het is erg donker en je ziet niet waar je heengaat. Gelukkig\n heb je die zaklamp die je in de pianokamer gevonden hebt. \nJe klikt op het lichtknopje en ziet nu hoe de tunnel er van \nbinnen uitziet. Overal hangen spinnenwebben en je wil \neigenlijk niet te lang in de tunnel blijven. Je ziet geen \nandere weg dan verder door de tunnel.",
         "beschrijving2": "Je staat in de tunnel",
         "richtingen": "N: Terug naar de kelder Z: Verder door de tunnel",
         A: "Kelder",
@@ -225,8 +221,7 @@ kamers = {
     },
     "Grot": {
         "titel": "De grot",
-        "beschrijving":
-        "Je wil toch wat verder verkennen. Je loopt een grot in die je door het in het rondte bewegen van je zaklamp kon zien. Je ziet overal plantengroei. Je denkt bij jezelf: 'Hoe kunnen hier benenden zonder zonlicht allemaal planten groeien?' Als je nog verder kijkt zie je in het westen een soort ondergronds meer en in het zuiden...",
+        "beschrijving": "Je wil toch wat verder verkennen. Je loopt een grot in die \nje door het in het rondte bewegen van je zaklamp kon zien. \nJe ziet overal plantengroei. Je denkt bij jezelf: 'Hoe \nkunnen hier benenden zonder zonlicht allemaal planten \ngroeien?' Als je nog verder kijkt zie je in het westen een \nsoort ondergronds meer en in het zuiden...",
         "beschrijving2": "Je staat in de grot.",
         "richtingen": "N: De tunnel \nW: Ondergronds meer \nZ:",
         A: "Tunnel",
@@ -241,7 +236,7 @@ kamers = {
     },
     "OndergrondsMeer": {
         "titel": "Het ondergrondse meer",
-        "beschrijving": "Je loopt naar het ondergrondse meer. Zodra je in het water kijkt lijkt het alsof er een andere wereld is onder het oppervlak. Zodra je het water aanraakt word je erin getrokken. Daarna word je wakker. Het was allemaal een droom... \nNadat je je kleding hebt aangedaan kom je uit je tent, maar als je om je heen kijkt zie je niet de tenten van je vrienden...",
+        "beschrijving": "Je loopt naar het ondergrondse meer. Zodra je in het water \nkijkt lijkt het alsof er een andere wereld is onder het \noppervlak. Zodra je het water aanraakt word je erin \ngetrokken. Daarna word je wakker. Het was allemaal een \ndroom... Nadat je je kleding hebt aangedaan kom je uit je \ntent, maar als je om je heen kijkt zie je niet de tenten van\n je vrienden...",
         "beschrijving2": "",
         "richtingen": "",
         A: "OndergrondsMeer",
@@ -257,8 +252,7 @@ kamers = {
     #alles vanaf dat je langs het huisje gaat
     "PadLangsHuisje": {
         "titel": "Je bent op het pad naast het huisje",
-        "beschrijving":
-        "Je bent nu in de achtertuin van het schimmige oude huisje. Er is hier niet veel te vinden, maar er ligt wel een lang stevig touw. Dat zou vast handig kunnen zijn. Opeens hoor je een soort gezang. Het lijkt vanuit zuidelijke richting te komen. Ook is de rotsmuur in oostelijke richting nu laag genoeg om er overheen te klimmen.",
+        "beschrijving": "Je bent nu in de achtertuin van het schimmige oude huisje. \nEr is hier niet veel te vinden, maar er ligt wel een lang \nstevig touw. Dat zou vast handig kunnen zijn. Opeens hoor je\n een soort gezang. Het lijkt vanuit zuidelijke richting te \nkomen. Ook is de rotsmuur in oostelijke richting nu laag \ngenoeg om er overheen te klimmen.",
         "beschrijving2": "",
         "richtingen":
         "O: Terug naar de voortuin van het huisje \nZ: Het pad volgen naar het zuiden",
@@ -275,8 +269,7 @@ kamers = {
     },
     "Achtertuin": {
         "titel": "Achtertuin",
-        "beschrijving":
-        "Je komt op een open veld en het gezang is hier veel \nduidelijker te horen. Zonder het zelf door te hebben word je\n gelokt door een sirene. De sirene krijgt het zover je naar \nhaar toe te lokken, zodat je op 1 meter afstand van haar staat. De sirene kijkt met haar witte zielloze ogen naar je. Dan opeens voelt het alsof je moe wordt. En als het eigenlijk al te laat is kom je erachter dat de sirene je ziel aan het opzuigen is.",
+        "beschrijving": "Je komt op een open veld en het gezang is hier veel \nduidelijker te horen. Zonder het zelf door te hebben word je\n gelokt door een sirene. De sirene krijgt het zover je naar \nhaar toe te lokken, zodat je op 1 meter afstand van haar \nstaat. De sirene kijkt met haar witte zielloze ogen naar je.\n Dan opeens voelt het alsof je moe wordt. En als het \neigenlijk al te laat is kom je erachter dat de sirene je \nziel aan het opzuigen is.",
         "beschrijving2": "",
         "richtingen": "N: Het pad langs het huisje",
         A: "PadLangsHuisje",
