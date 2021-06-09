@@ -8,7 +8,7 @@ from Gebieden import kamers
 # - overige kamers toevoegen in data
 # - verhaal afmaken
 # - bugs fixen
-
+# - typfouten oplossen
 
 
 
@@ -89,6 +89,7 @@ class speler:
         self.location = 'RivierMetBrug'
         self.typemachine = 'false'
         self.bezochteKamers = [""]
+        self.gewonnen = "false"
 speler = speler()
 
 
@@ -425,7 +426,7 @@ def keuze():
     use()
 #========================================
 
-#MENU'S
+#MENU'S#
   
 #dood-menu
 def dood():
@@ -438,18 +439,129 @@ def dood():
 
 #win-functie
 def win():
-  print("Yess!!! \nJe hebt het spel uitgespeeld! \nGoed gedaan! \nWil je nog een keer spelen om een ander einde te krijgen?")
-  print("[ja/nee]")
-  choice = input('')
-  if choice.lower() ==  "ja":
-    intro()
-  elif choice.lower() == "nee":
-    hoofdmenu()
-  else:
+  speler.gewonnen = "true"
+  print("Yess!!! \nJe hebt het spel uitgespeeld! \nGoed gedaan!")
+  i = 1
+  while speler.gewonnen == "true" and i < 25:
     os.system('clear')
-    print("vul een geldig antwoord in!")
-    time.sleep(1)
-    win()
+    print("   _______    ")
+    print("  /  . .  \ ")
+    print("  | \___/  | ")
+    print("  \ ______/")
+    print("      |")
+    print("     /|\__ ")
+    print("   _/ |  ")
+    print("     /-\ ")
+    print("    /   |")
+    print("   |==  |==")
+    print("_ _ _ _ _ _ _ _")
+    print("   JEFF  ")
+    time.sleep(0.2)
+    os.system('clear')
+    print("   _______    ")
+    print("  /  . .  \ ")
+    print("  | \___/  | ")
+    print("  \ ______/")
+    print("      |")
+    print("     /|\  ")
+    print("    | | | ")
+    print("     /-\ ")
+    print("    |   | ")
+    print("    |== |==")
+    print(" _ _ _ _ _ _ _ _")
+    print("   JEFF  ")
+    time.sleep(0.2)
+    os.system('clear')
+    print("   _______    ")
+    print("  /  . .  \ ")
+    print("  | \___/  | ")
+    print("  \ ______/")
+    print("      |")
+    print("   __/|\  ")
+    print("      | \_ ")
+    print("     /-\ ")
+    print("    |   \ ")
+    print("    |==  |==")
+    print(" _ _ _ _ _ _ _ _")
+    print("   JEFF  ")
+    time.sleep(0.2)
+    os.system('clear')
+    print("   _______    ")
+    print("  /[0] [0]\ ")
+    print("  | /---\  | ")
+    print("  | \---/  | ")
+    print("  \ ______/")
+    print("      |")
+    print("   __/|\  ")
+    print("      | \_ ")
+    print("     /-\ ")
+    print("    |   \ ")
+    print("    |==  |==")
+    print(" _ _ _ _ _ _ _ _")
+    print("   JEFF  ")
+    time.sleep(0.05)
+    i += 1
+  os.system('clear')
+  print("   _______    ")
+  print("  /[0] [0]\ ")
+  print("  | /---\  | ")
+  print("  | \---/  | ")
+  print("  \ ______/")
+  print("      |")
+  print("   __/|\  ")
+  print("      | \_ ")
+  print("     /-\ ")
+  print("    |   \ ")
+  print("    |==  |==")
+  print(" _ _ _ _ _ _ _ _")
+  print("   JEFF  ")
+  time.sleep(2)
+  os.system('clear')
+  credits()
+
+#creditsmenu
+def credits():
+  print("Bedankt voor het spelen van ons spel.")
+  time.sleep(1.5)
+  os.system('clear')
+  print("Bedankt voor het spelen van ons spel. \nCredits:")
+  time.sleep(1.5)
+  os.system('clear')
+  print("Bedankt voor het spelen van ons spel. \nCredits: \nMet dank aan:")
+  time.sleep(1.5)
+  os.system('clear')
+  print("Bedankt voor het spelen van ons spel. \nCredits: \nMet dank aan: \nSannah Kuip - Voor het meehelpen met de code en het verhaal schrijven")
+  time.sleep(1.5)
+  os.system('clear')
+  print("Bedankt voor het spelen van ons spel. \nCredits: \nMet dank aan: \nSannah Kuip - Voor het meehelpen met de code en het verhaal schrijven \nVincent Rink - Voor het schrijven van een groot deel van de code")
+  time.sleep(1.5)
+  os.system('clear')
+  print("Bedankt voor het spelen van ons spel. \nCredits:\nMet dank aan: \nSannah Kuip - Voor het meehelpen met de code en het verhaal schrijven \nVincent Rink - Voor het schrijven van een groot deel van de code \nEn...")
+  time.sleep(1.5)
+  os.system('clear')
+  print("Bedankt voor het spelen van ons spel. \nCredits:\nMet dank aan: \nSannah Kuip - Voor het meehelpen met de code en het verhaal schrijven \nVincent Rink - Voor het schrijven van een groot deel van de code \nEn... \nTim Logtenberg - voor het geven van deze leuke opdracht")
+  time.sleep(1.5)
+  os.system('clear')
+  print("\nCredits:\nMet dank aan: \nSannah Kuip - Voor het meehelpen met de code en het verhaal schrijven \nVincent Rink - Voor het schrijven van een groot deel van de code \nEn... \nTim Logtenberg - voor het geven van deze leuke opdracht")
+  time.sleep(1.5)
+  os.system('clear')
+  print("\nMet dank aan: \nSannah Kuip - Voor het meehelpen met de code en het verhaal schrijven \nVincent Rink - Voor het schrijven van een groot deel van de code \nEn... \nTim Logtenberg - voor het geven van deze leuke opdracht")
+  time.sleep(1.5)
+  os.system('clear')
+  print(" \nSannah Kuip - Voor het meehelpen met de code en het verhaal schrijven \nVincent Rink - Voor het schrijven van een groot deel van de code \nEn... \nTim Logtenberg - voor het geven van deze leuke opdracht")
+  time.sleep(1.5)
+  os.system('clear')
+  print("\nVincent Rink - Voor het schrijven van een groot deel van de code \nEn... \nTim Logtenberg - voor het geven van deze leuke opdracht")
+  time.sleep(1.5)
+  os.system('clear')
+  print("\nEn... \nTim Logtenberg - voor het geven van deze leuke opdracht")
+  time.sleep(1.5)
+  os.system('clear')
+  print("\nTim Logtenberg - voor het geven van deze leuke opdracht")
+  time.sleep(3)
+  os.system('clear')
+  time.sleep(2)
+  sys.exit
 
 #quit-menu
 def quit():
@@ -488,14 +600,17 @@ def NaamInvullen():
 
   format_string = "Hallo %s, leuk dat je deze text adventure speelt!"
   print(format_string % speler.naam)
-  print("druk op [enter] om door te gaan")
-  choice = input('')
-  if choice.lower() == "":
-    os.system('clear')
-    intro()
+  if speler.naam == "sannAH":
+    win()
   else:
-    os.system('clear')
-    intro()
+    print("druk op [enter] om door te gaan")
+    choice = input('')
+    if choice.lower() == "":
+      os.system('clear')
+      intro()
+    else:
+      os.system('clear')
+      intro()
   
 #help-menu voor in een kamer
 def help_in_game():
