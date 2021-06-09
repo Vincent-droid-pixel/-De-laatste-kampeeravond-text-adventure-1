@@ -669,4 +669,4 @@ def hoofdmenu():
     hoofdmenu()
 
 
-credits()
+hoofdmenu()
