@@ -32,8 +32,7 @@ kamers = {
         D: "RivierMetBrug",
         "items": [""],
         "benodigdheden": "kompas",
-        "acties":
-        "d (drop item) \nu (use) \nh (health) \ni (inventory) \n? (help) \nq (quit) \n/ (opties)",
+        "acties": "d (drop item), u (use), h (health), i (inventory), ? (help), q (quit), / (opties)",
         "dood": "no",
         "win": "no"
     },
@@ -61,8 +60,7 @@ kamers = {
         D: "RivierMetBrug",
         "items": ["ehbo-kit"],
         "benodigdheden": "kompas",
-        "acties":
-        "g/d (get/drop item) \nu (use) \nh (health) \ni (inventory) \n? (help) \nq (quit) \n/ (opties)",
+        "acties": "g/d (get/drop item), u (use), h (health), i (inventory), ? (help), q (quit), / (opties)",
         "dood": "no",
         "win": "no"
     },
@@ -90,8 +88,7 @@ kamers = {
         D: "StenenPlein",
         "items": ["machete"],
         "benodigdheden": "kompas",
-        "acties":
-        "g/d (get/drop item) \nu (use) \nh (health) \ni (inventory) \n? (help) \nq (quit) \n/ (opties)",
+        "acties": "d (drop item), u (use), h (health), i (inventory), ? (help), q (quit), / (opties)",
         "dood": "no",
         "win": "no",
     },
@@ -108,8 +105,7 @@ kamers = {
         D: "PadLangsHuisje",
         "items": [""],
         "benodigdheden": "kompas",
-        "acties":
-        "d (drop item) \nu (use) \nh (health) \ni (inventory) \n? (help) \nq (quit) \n/ (opties)",
+        "acties": "d (drop item), u (use), h (health), i (inventory), ? (help), q (quit), / (opties)",
         "dood": "no",
         "win": "no"
     },
@@ -125,7 +121,7 @@ kamers = {
         E: "PadLangsRotsmuur",
         "items": [""],
         "benodigdheden": "touw",
-        "acties": "",
+        "acties": "d (drop item), u (use), h (health), i (inventory), ? (help), q (quit), / (opties)",
         "dood": "no",
         "win": "no"
     },
@@ -141,7 +137,7 @@ kamers = {
         E: "OpDeRotsmuur",
         "items": ["suikerspin", "chocolade", "lolly's", "eenhoorn"],
         "benodigdheden": "kompas",
-        "acties": "g/d (get/drop item) \nu (use) \nh (health) \ni (inventory) \n? (help) \nq (quit) \n/ (opties",
+        "acties": "g/d (get/drop item), u (use), h (health), i (inventory), ? (help), q (quit), / (opties)",
         "dood": "no",
         "win": "no"
     },
@@ -156,7 +152,7 @@ kamers = {
         D: "",
         "items": [""],
         "benodigdheden": "machete",
-        "acties": "d (drop item) \nu (use) \nh (health) \ni (inventory) \n? (help) \nq (quit) \n/ (opties)",
+       "acties": "d (drop item), u (use), h (health), i (inventory), ? (help), q (quit), / (opties)",
         "dood": "no",
         "win": "yes"
     },
@@ -174,8 +170,7 @@ kamers = {
         D: "Huisje",
         "items": [""],
         "benodigdheden": "kompas",
-        "acties":
-        "d (drop item) \nu (use) \nh (health) \ni (inventory) \n? (help) \nq (quit) \n/ (opties)",
+        "acties": "d (drop item), u (use), h (health), i (inventory), ? (help), q (quit), / (opties)",
         "dood": "no",
         "win": "no"
     },
@@ -191,8 +186,7 @@ kamers = {
         D: "Kelder",
         "items": [""],
         "benodigdheden": "kompas",
-        "acties":
-        "d (drop item) \nu (use) \nh (health) \ni (inventory) \n? (help) \nq (quit) \n/ (opties)",
+        "acties": "d (drop item), u (use), h (health), i (inventory), ? (help), q (quit), / (opties)",
         "dood": "no",
         "win": "no"
     },
@@ -208,8 +202,7 @@ kamers = {
         D: "Huisje",
         "items": ["zaklamp"],
         "benodigdheden": "kompas",
-        "acties":
-        "g/d (get/drop item) \nu (use) \nh (health) \ni (inventory) \n? (help) \nq (quit) \n/ (opties",
+        "acties": "g/d (get/drop item), u (use), h (health), i (inventory), ? (help), q (quit), / (opties)",
         "dood": "no",
         "win": "no"
     },
@@ -226,8 +219,7 @@ kamers = {
         E: "Kelder",
         "items": [""],
         "benodigdheden": "zaklamp",
-        "acties":
-        "d (drop item) \nu (use) \nh (health) \ni (inventory) \n? (help) \nq (quit) \n/ (opties)",
+        "acties": "d (drop item), u (use), h (health), i (inventory), ? (help), q (quit), / (opties)",
         "dood": "no",
         "win": "no"
     },
@@ -243,7 +235,7 @@ kamers = {
         D: "OndergrondsMeer",
         "items": [""],
         "benodigdheden": "",
-        "acties": "d (drop item) \nu (use) \nh (health) \ni (inventory) \n? (help) \nq (quit) \n/ (opties)",
+        "acties": "d (drop item), u (use), h (health), i (inventory), ? (help), q (quit), / (opties)",
         "dood": "no",
         "win": "no"
     },
@@ -258,7 +250,7 @@ kamers = {
         D: "OndergrondsMeer",
         "items": [""],
         "benodigdheden": "",
-        "acties": "d (drop item) \nu (use) \nh (health) \ni (inventory) \n? (help) \nq (quit) \n/ (opties)",
+        "acties": "d (drop item), u (use), h (health), i (inventory), ? (help), q (quit), / (opties)",
         "dood": "no",
         "win": "yes"
     },
@@ -277,8 +269,7 @@ kamers = {
         E: "PadLangsRotsmuur",
         "items": ["touw"],
         "benodigdheden": "machete",
-        "acties":
-        "d (drop item) \nu (use) \nh (health) \ni (inventory) \n? (help) \nq (quit) \n/ (opties)",
+        "acties": "g/d (get/drop item), u (use), h (health), i (inventory), ? (help), q (quit), / (opties)",
         "dood": "no",
         "win": "no"
     },
@@ -297,20 +288,5 @@ kamers = {
         "acties": "",
         "dood": "yes",
         "win": "no"
-    },
-    "": {
-        "titel": "",
-        "beschrijving": "",
-        "beschrijving2": "",
-        "richtingen": "",
-        A: "",
-        B: "",
-        C: "",
-        D: "",
-        "items": [""],
-        "benodigdheden": "",
-        "acties": "",
-        "dood": "",
-        "win": ""
     }
 }
