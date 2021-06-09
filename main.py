@@ -442,7 +442,7 @@ def win():
   speler.gewonnen = "true"
   print("Yess!!! \nJe hebt het spel uitgespeeld! \nGoed gedaan!")
   i = 1
-  while speler.gewonnen == "true" and i < 25:
+  while speler.gewonnen == "true" and i < 15:
     os.system('clear')
     print("   _______    ")
     print("  /  . .  \ ")
