@@ -656,7 +656,7 @@ def stop():
 
 #hoofdmenu
 def hoofdmenu():
-  print("============================================= \n|                                           | \n|                                           | \n|     ----------------------------------    | \n|     || Welkom bij de text adventure ||    | \n|     ||    van Sannah en Vincent     ||    | \n|     ----------------------------------    | \n|                 Kies uit:                 | \n|                                           |\n|                  -start                   | \n|                  -stop                    | \n|                  -help                    | \n|                  -opties                  | \n=============================================")
+  print("============================================= \n|         DE LAATSTE KAMPEERAVOND           | \n|                                           | \n|     ----------------------------------    | \n|     || Welkom bij de text adventure ||    | \n|     ||    van Sannah en Vincent     ||    | \n|     ----------------------------------    | \n|                 Kies uit:                 | \n|                                           |\n|                  -start                   | \n|                  -stop                    | \n|                  -help                    | \n|                  -opties                  | \n=============================================")
   choice = input("""           Vul je keuze in:  """)   
   #keuzes van het hoofdmenu#
   if choice.lower() == "start":
