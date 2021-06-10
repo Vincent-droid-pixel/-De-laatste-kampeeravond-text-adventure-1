@@ -7,7 +7,7 @@ bedankt dat je dit speelt. Je hebt verschillende controls in deze text adventure
 [vul hier je naam in]
 
 
-{Tussen de start en het huisje}
+{TUSSEN DE START EN HET HUISJE}
 [1. rivier met brug en pad]
 Je komt bij een rivier waar een gammele houten brug naar het noorden overheen loopt. Je weet niet of je er eigenlijk wel overheen kunt lopen zonder dat hij doorbreekt. Je ziet ook nog een pad langs het water stroomopwaarts richting het oosten lopen.
 
@@ -49,7 +49,6 @@ De kanten waar je op kan gaan zijn:
 N (noorden)
 Z (zuiden)
 W (westen)
-
 
 
 
@@ -96,16 +95,18 @@ Z (zuiden)
 N (noorden) {terug naar de tunnel}
 W (westen)
 
-[12. Deel van grot]
+[12. Spinnenkamer]
 Je loopt de kamer in. Om je heen hoor je allemaal geluiden. Nadat je je zaklamp hebt aangezet zie je allemaal spinnen! Ze kruipen over je heen en ze bijten je. Ze kruipen zelfs in je mond. Je wordt langzaam verlamt door het gif totdat je niet meer helder kunt denken. Alles wordt zwart...
 
+[13. Het ondergrondse meer]
+Je loopt naar het ondergrondse meer. Zodra je in het water kijkt lijkt het alsof er een andere wereld is onder het oppervlak. Zodra je het water aanraakt word je erin getrokken. Daarna word je wakker. Het was allemaal een droom... Nadat je je kleding hebt aangedaan kom je uit je tent, maar als je om je heen kijkt zie je niet de tenten van\n je vrienden...
 
 
 
 
 
 {ACHTER HET HUISJE}
-[13. Pad om het huisje in het westen]
+[14. Achtertuin van het huisje]
 Je bent nu in de achtertuin van het schimmige oude huisje. Er is hier niet veel te vinden, maar er ligt wel een lang stevig touw. Dat zou vast handig kunnen zijn. Opeens hoor je een soort gezang. Het lijkt vanuit zuidelijke richting te komen. Ook is de rotsmuur in oostelijke richting nu laag genoeg om er overheen te klimmen.
 
 Items:
@@ -115,10 +116,10 @@ De kanten waar je op kan gaan zijn:
 Z (zuiden)
 O (oosten)
 
-[14. Richting de sirene in het zuiden]
-Je komt op een open veld en het gezang is hier veel duidelijker te horen. Zonder het zelf door te hebben word je gelokt door een sirene. De sirene krijgt het zover je naar haar toe te lokken, zodat je op 1 meter afstand van haar staat. dan ga je op een een of andere wijze dood maar dat moet k ff verzinnen lmao, Ze sLoKt jE ZiEL oP, een IT momentje
+[15. Richting de sirene in het zuiden]
+Je komt op een open veld en het gezang is hier veel duidelijker te horen. Zonder het zelf door te hebben word je gelokt door een sirene. De sirene krijgt het zover je naar haar toe te lokken, zodat je op 1 meter afstand van haar staat. De sirene kijkt met haar witte zielloze ogen naar je. Dan opeens voelt het alsof je moe wordt. En als het eigenlijk al te laat is kom je erachter dat de sirene je ziel aan het opzuigen is.
 
-[15. Over de rotsmuur naar het oosten]
+[16. Op de rotsmuur naar het oosten]
 Je loopt richting de rotsmuur. Je bent aan het denken over hoe je deze muur gaat beklimmen. Dan besef je dat je nog dat touw hebt wat je had gevonden achter het huisje. 
 Je klimt over de rotsmuur en staat nu op een hoog stuk grond.
 
@@ -127,10 +128,10 @@ N (noorden) (heb je machete voor nodig) (die vind je bij de rotsmuur)
 O (oosten) (loopt dood)
 W (westen) (ander einde)
 
-[16. Bos naar het noorden]
+[17. Bos naar het noorden]
 Je loopt richting het bos. De doornen en uitstekende takken doen je gedachtes niet veel goeds, totdat je bedenkt dat je nog die machete hebt die je gevonden hebt in de grot! “Deze tocht heeft wel lang genoeg geduurd..” denk je. Je gebruikt je laatste beetje kracht en slaat je weg door het bos heen met de machete. Je ziet de de tent waar je vrienden in liggen.
 
-[17. Vallei]
+[18. Vallei]
 Je loopt de vallei binnen. Het is er prachtig!!! Je ziet overal eenhoorns en regenbogen. De bomen zijn gemaakt van suikerspin en de meren zijn gevuld met limonade. Het liefst blijf je voor altijd hier. Helaas kan dat niet. Je kan alleen weer naar dezelfde kant als waar je vandaan kwam.
 
 Items:
