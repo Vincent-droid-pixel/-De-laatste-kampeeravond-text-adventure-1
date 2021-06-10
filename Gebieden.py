@@ -39,7 +39,7 @@ kamers = {
     "BrugNaarNoorden": {
         "titel": "De brug",
         "doodsbeschrijving":
-        "Je loopt er overheen. De brug breekt door en je valt in het \nijskoude water. Je weet er uiteindelijk nog wel uit te \nklimmen, maar uiteindelijk ga je toch dood door onderkoeling.",
+        "Je loopt er overheen. De brug breekt door en je valt in het \nijskoude water. Je weet er uiteindelijk nog wel uit te \nklimmen, maar je gaat toch nog dood door onderkoeling.",
         "beschrijving":
         "Je loopt er overheen. De brug breekt door en je valt in het \nijskoude water. Je weet er uiteindelijk nog wel uit te \nklimmen en overleeft het maar net. Je gaat snel terug naar \nhet vorige kruispunt.",
         A: "RivierMetBrug",
@@ -50,7 +50,7 @@ kamers = {
     "StenenPlein": {
         "titel": "Stenen pleintje",
         "beschrijving":
-        "Je loopt langs het pad en komt op een stenen pleintje. je \nkomt een klein meisje tegen in witte gewaden. Het lijkt \nbijna alsof ze gloeit zo licht zijn haar gewaden. Zodra het \nmeisje je ziet loopt ze weg richting het zuiden. Je twijfelt\n of je haar zal volgen of dat je het rivier pad moet volgen. \nVerder zie je ook nog bij een stenen pilaar een EHBO-kit \nliggen.",
+        "Je loopt langs het pad en komt op een stenen pleintje. Je \nkomt een klein meisje tegen in witte gewaden. Het lijkt \nbijna alsof ze gloeit, zo licht zijn haar gewaden. Zodra het \nmeisje je ziet, loopt ze weg richting het zuiden. Je twijfelt\n of je haar zal volgen of dat je het rivier pad moet volgen. \nVerder zie je ook nog bij een stenen pilaar een EHBO-kit \nliggen.",
         "beschrijving2": "",
         "richtingen":
         "O: Verder naar het oosten \nZ: Meisje naar zuiden \nW: De rivier bij de brug",
@@ -78,7 +78,7 @@ kamers = {
     "RotsmuurInOosten": {
         "titel": "Rotsmuur",
         "beschrijving":
-        "Je komt bij een stenen helling van een berg die te steil is \nom te klimmen. Daar waar de rots overgaat in het gras zie je\n iets liggen. Als je goed kijkt blijkt het dat het een lijk \nis. Maar het is geen gewoon lijk. Het lijk is vastgegroeid \naan de rots door een of andere schimmel. Je ziet dat het \nlijk iets in zijn handen heeft. Het blijkt een machete te \nzijn. Daarmee kun je planten wegslaan. Je kan vanaf hier \nalleen naar het zuiden want in het noorden loopt de rivier \nen in het oosten is de rotsmuur.",
+        "Je komt bij een stenen helling van een berg die te steil is \nom te klimmen. Daar waar de rots overgaat in het gras zie je\n iets liggen. Als je goed kijkt blijkt het dat het een lijk \nis. Maar het is geen gewoon lijk. Het lijk is vastgegroeid \naan de rots door een of andere schimmel. Je ziet dat het \nlijk iets in zijn handen heeft. Het blijkt een machete te \nzijn. Daarmee kun je planten wegslaan. Je kan vanaf hier \nalleen naar het zuiden, want in het noorden loopt de rivier \nen in het oosten is de rotsmuur.",
         "beschrijving2": "",
         "richtingen":
         "Z: Pad langs de rotsmuur naar het zuiden \nW: Rivierpad in het westen",
@@ -143,7 +143,7 @@ kamers = {
     },
   "Bos": {
         "titel": "Het bos",
-        "beschrijving": "Je loopt richting het bos. De doornen en uitstekende takken \ndoen je gedachtes niet veel goeds, totdat je bedenkt dat je \nnog die machete hebt die je gevonden hebt in de grot! “Deze \ntocht heeft wel lang genoeg geduurd..” denk je. Je gebruikt \nje laatste beetje kracht en slaat je weg door het bos heen \nmet de machete. Je ziet de de tent waar je vrienden in \nliggen.",
+        "beschrijving": "Je loopt richting het bos. De doornen en uitstekende takken \ndoen je gedachtes niet veel goeds, totdat je bedenkt dat je \nnog die machete hebt die je gevonden hebt in de grot! “Deze \ntocht heeft wel lang genoeg geduurd..” denk je. Je gebruikt \nje laatste beetje kracht en slaat je weg door het bos heen \nmet de machete. Je ziet de de tent waar je vrienden in \nliggen. Je hebt het hele avontuur doorstaan.",
         "beschrijving2": "",
         "richtingen": "",
         A: "",
@@ -190,7 +190,7 @@ kamers = {
     },
     "Pianokamer": {
         "titel": "De pianokamer",
-        "beschrijving": "Je loopt de kamer voorzichtig in en je ziet een platenspeler\n spelen. Daar kwam de pianomuziek dus vandaan! Maar wie \nheeft die plaat erop gelegd? Er zijn geen andere uitgangen \nuit de kamer behalve de deuropening waar je doorheen bent \ngekomen. Verder zie je een tafel met een zaklamp erop \nliggen.",
+        "beschrijving": "Je loopt de kamer voorzichtig in en je ziet een platenspeler\n muziek spelen. Daar kwam de pianomuziek dus vandaan! Maar wie \nheeft die plaat erop gelegd?? Er zijn geen andere uitgangen \nuit de kamer behalve de deuropening waar je doorheen bent \ngekomen. Verder zie je een tafel met een zaklamp erop \nliggen.",
         "beschrijving2": "",
         "richtingen": "W: De ingang van het huisje",
         A: "Pianokamer",
