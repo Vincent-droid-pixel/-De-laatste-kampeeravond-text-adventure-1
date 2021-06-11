@@ -440,7 +440,7 @@ def dood():
   os.system('clear')
   animation = ["Je", "Je bent", "Je bent dood.","Je bent dood. Bedankt","Je bent dood. Bedankt voor", "Je bent dood. Bedankt voor het", "Je bent dood. bedankt voor het spelen!!!"]
   for x in range(len(animation)):
-    time.sleep(0.5)
+    time.sleep(0.3)
     sys.stdout.write("\r" + animation[x % len(animation)])
   sys.exit
 
