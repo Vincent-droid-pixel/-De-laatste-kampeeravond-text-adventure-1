@@ -325,7 +325,7 @@ def print_location():
   elif kamers[speler.location][Dood] == ("yes") and speler.health == "100%":
     os.system('clear')
     speler.health = "50%"
-    print("=" * 40)
+    print("\n""=" * 40)
     #if-statement kijkt of typemachine animatie aan staat
     if speler.typemachine == "true":
       for char in (kamers[speler.location][Beschrijving]):
@@ -335,7 +335,7 @@ def print_location():
     #elif-statement kijkt of typemachine animatie uit staat
     elif speler.typemachine == "false":
       print(kamers[speler.location][Beschrijving])
-    print("=" * 40)
+    print("\n""=" * 40)
     print("druk [enter] om terug te gaan")
     choice = input('')
     if choice.lower() == "":  
@@ -347,7 +347,7 @@ def print_location():
   #elif-statement kijkt of je er dood kunt gaan en 50% health hebt      
   elif kamers[speler.location][Dood] == ("yes") and speler.health == "50%":
     os.system('clear')
-    print("=" * 40)
+    print("\n""=" * 40)
     #if-statement kijkt of typemachine animatie aan staat
     if speler.typemachine == "true":
       for char in (kamers[speler.location][Doodsbeschrijving]):
@@ -357,7 +357,7 @@ def print_location():
     #elif-statement kijkt of typemachine animatie uit staat
     elif speler.typemachine == "false":
       print(kamers[speler.location][Doodsbeschrijving])
-    print("=" * 40)
+    print("\n""=" * 40)
     print("Druk op [enter] om door te gaan")
     choice = input('')
     if choice.lower() == "":
@@ -367,7 +367,7 @@ def print_location():
   #elif statement kijkt of een speler kan winnen in een kamer
   elif kamers[speler.location][Win] == ("yes"):
     os.system('clear')
-    print("=" * 40)
+    print("\n""=" * 40)
     #if-statement kijkt of typemachine animatie aan staat
     if speler.typemachine == "true":
       for char in (kamers[speler.location][Beschrijving]):
@@ -377,7 +377,7 @@ def print_location():
     #elif-statement kijkt of typemachine animatie uit staat
     elif speler.typemachine == "false":
       print(kamers[speler.location][Beschrijving])
-    print("=" * 40)
+    print("\n""=" * 40)
     choice = input('')
     if choice.lower() == "":
       win()
