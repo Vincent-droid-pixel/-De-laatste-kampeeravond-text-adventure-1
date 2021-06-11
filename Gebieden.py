@@ -22,7 +22,7 @@ kamers = {
     "RivierMetBrug": {
         "titel": "1. Een rivier met een brug.",
         "beschrijving":
-        "Het is een gammele houten brug die naar het noorden over de rivier loopt. \nJe weet niet of je er eigenlijk wel overheen kunt lopen zonder dat hij doorbreekt. \nJe ziet ook nog een pad langs het water stroomopwaarts richting het oosten lopen.",
+        "Het is een gammele houten brug die naar het noorden over \nde rivier loopt. Je weet niet of je er eigenlijk \nwel overheen kunt lopen zonder dat hij doorbreekt. \nJe ziet ook nog een pad langs het water stroomopwaarts \nrichting het oosten lopen.",
         "beschrijving2": "Je staat bij de rivier met de brug.",
         "richtingen":
         "N: De brug naar het noorden \nO: Het rivierpad naar het oosten",

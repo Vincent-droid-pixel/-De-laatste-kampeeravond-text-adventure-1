@@ -344,7 +344,7 @@ def print_location():
   elif kamers[speler.location][Dood] == ("yes") and speler.health == "100%":
     os.system('clear')
     speler.health = "50%"
-    print("\n""=" * 40)
+    print("=" * 40)
     #if-statement kijkt of typemachine animatie aan staat
     if speler.typemachine == "true":
       for char in (kamers[speler.location][Beschrijving]):
@@ -354,7 +354,8 @@ def print_location():
     #elif-statement kijkt of typemachine animatie uit staat
     elif speler.typemachine == "false":
       print(kamers[speler.location][Beschrijving])
-    print("\n""=" * 40)
+    print("\n")
+    print("=" * 40)
     print("druk [enter] om terug te gaan")
     choice = input('')
     if choice.lower() == "":  
@@ -366,7 +367,7 @@ def print_location():
   #elif-statement kijkt of je er dood kunt gaan en 50% health hebt      
   elif kamers[speler.location][Dood] == ("yes") and speler.health == "50%":
     os.system('clear')
-    print("\n""=" * 40)
+    print("=" * 40)
     #if-statement kijkt of typemachine animatie aan staat
     if speler.typemachine == "true":
       for char in (kamers[speler.location][Doodsbeschrijving]):
@@ -376,7 +377,8 @@ def print_location():
     #elif-statement kijkt of typemachine animatie uit staat
     elif speler.typemachine == "false":
       print(kamers[speler.location][Doodsbeschrijving])
-    print("\n""=" * 40)
+    print("\n")
+    print("=" * 40)
     print("Druk op [enter] om door te gaan")
     choice = input('')
     if choice.lower() == "":
@@ -386,7 +388,7 @@ def print_location():
   #elif statement kijkt of een speler kan winnen in een kamer
   elif kamers[speler.location][Win] == ("yes"):
     os.system('clear')
-    print("\n""=" * 40)
+    print("=" * 40)
     #if-statement kijkt of typemachine animatie aan staat
     if speler.typemachine == "true":
       for char in (kamers[speler.location][Beschrijving]):
@@ -396,7 +398,8 @@ def print_location():
     #elif-statement kijkt of typemachine animatie uit staat
     elif speler.typemachine == "false":
       print(kamers[speler.location][Beschrijving])
-    print("\n""=" * 40)
+    print("\n")
+    print("=" * 40)
     choice = input('')
     if choice.lower() == "":
       win()
@@ -600,7 +603,8 @@ def quit():
 
 #intro-menu
 def intro():
-  tekst = "====================================================== \nJe bent gezellig met vrienden aan het kamperen in het bos. \nHelaas kon je niet slapen. \nJe dacht: 'laat ik even een boswandeling maken, zodat ik beter kan slapen.' \nHet enige wat je meeneemt is een kompas. \nNa een kwartier te hebben gelopen kom je opeens tot het besef dat je niet meer weet waar je bent! \nJe denkt bij jezelf: ‘ik moet mijn vrienden terugvinden!’ \n======================================================"
+  print("======================================================")
+  tekst = "Je bent gezellig met vrienden aan het kamperen in het bos. \nHelaas kon je niet slapen. \nJe dacht: 'laat ik even een boswandeling maken, zodat ik beter kan slapen.' \nHet enige wat je meeneemt is een kompas. \nNa een kwartier te hebben gelopen kom je opeens tot het besef dat je niet meer weet waar je bent! \nJe denkt bij jezelf: ‘ik moet mijn vrienden terugvinden!’ "
   #if-statement kijkt of typemachine animatie aan staat
   if speler.typemachine == "true":
     for char in (tekst):
@@ -610,7 +614,7 @@ def intro():
       #elif-statement kijkt of typemachine animatie uit staat
   elif speler.typemachine == "false":
     print(tekst)
-
+  print("\n======================================================")
 
   choice = input(" \nDruk op [enter] als je verder wil gaan: ")
   if choice.lower() == "":
