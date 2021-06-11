@@ -217,7 +217,7 @@ kamers = {
     #alles vanaf dat je langs het huisje gaat
     "PadLangsHuisje": {
         "titel": "14. De achtertuin van het huisje",
-        "beschrijving": "Je bent nu in de achtertuin van het schimmige oude huisje. \nEr is hier niet veel te vinden, maar er ligt wel een lang \nstevig touw. Dat zou vast handig kunnen zijn. Opeens hoor je\n een soort gezang. Het lijkt vanuit zuidelijke richting te \nkomen. Ook is de rotsmuur in oostelijke richting nu laag \ngenoeg om er overheen te klimmen.",
+        "beschrijving": "Je bent nu in de achtertuin van het schimmige oude huisje. \nEr is hier niet veel te vinden, maar er ligt wel een lang \nstevig touw. Dat zou vast handig kunnen zijn. Opeens hoor je\n een soort gezang. Het lijkt vanuit zuidelijke richting te \nkomen.",
         "beschrijving2": "Je staat in de achtertuin van het huisje.",
         "richtingen":
         "O: Terug naar de voortuin van het huisje \nZ: Het pad volgen naar het zuiden",

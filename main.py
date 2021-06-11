@@ -122,10 +122,29 @@ def get():
       dood()
     else:
       dood()
+  elif choice.lower() == "machete":
+    kamers[speler.location][Items].remove("machete")
+    speler.inventory.append("machete")
+    speler.usable.append("machete")
+    print("je hebt het item opgepakt. Druk op [enter] om verder te gaan")
+    choice = input('')
+    if choice.lower() == "":
+      print_location()
+    else:
+      print_location()
+  elif choice.lower() == "ehbo-kit":
+    kamers[speler.location][Items].remove("ehbo-kit")
+    speler.inventory.append("ehbo-kit")
+    speler.usable.append("ehbo-kit")
+    print("je hebt het item opgepakt. Druk op [enter] om verder te gaan")
+    choice = input('')
+    if choice.lower() == "":
+      print_location()
+    else:
+      print_location()
   elif choice.lower() in kamers[speler.location][Items]:
     kamers[speler.location][Items].remove(choice.lower())
     speler.inventory.append(choice.lower())
-    speler.usable.append(choice.lower())
     print("je hebt het item opgepakt. Druk op [enter] om verder te gaan")
     choice = input('')
     if choice.lower() == "":
@@ -188,8 +207,8 @@ def use():
   print("Welk item wil je gebruiken? (of typ terug om terug te gaan)")
   choice = input()
   if choice.lower() == "ehbo-kit":
-    speler.inventory.remove('EHBO-kit')
-    speler.usable.remove('EHBO-kit')
+    speler.inventory.remove('ehbo-kit')
+    speler.usable.remove('ehbo-kit')
     print("Je hebt de EHBO-kit gebruikt.")
     speler.health = "100%"
     print("Je hebt het item gebruikt. Je health is weer 100%. Druk op [enter] om door te gaan")
