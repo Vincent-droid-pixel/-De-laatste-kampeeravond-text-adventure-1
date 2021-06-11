@@ -593,7 +593,7 @@ def intro():
     print(tekst)
 
 
-  choice = input(""" Druk op [enter] als je verder wil gaan: """)
+  choice = input(" \nDruk op [enter] als je verder wil gaan: ")
   if choice.lower() == "":
     os.system('clear')
     print_location()

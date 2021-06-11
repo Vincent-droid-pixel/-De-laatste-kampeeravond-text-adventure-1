@@ -174,7 +174,7 @@ kamers = {
     },
     "Grot": {
         "titel": "11. De grot",
-        "beschrijving": "Je wil toch wat verder verkennen. Je loopt een grot in die \nje door het in het rondte bewegen van je zaklamp kon zien. \nJe ziet overal plantengroei. Je denkt bij jezelf: 'Hoe \nkunnen hier benenden zonder zonlicht allemaal planten \ngroeien?' Als je nog verder kijkt zie je in het westen een \nsoort ondergronds meer en in het zuiden zie je nog een deel van de grot",
+        "beschrijving": "Je wil toch wat verder verkennen. Je loopt een grot in die \nje door het in het rondte bewegen van je zaklamp kon zien. \nJe ziet overal plantengroei. Je denkt bij jezelf: 'Hoe \nkunnen hier beneden zonder zonlicht allemaal planten \ngroeien?' Als je nog verder kijkt zie je in het westen een \nsoort ondergronds meer en in het zuiden zie je nog een deel van de grot",
         "beschrijving2": "Je staat in de grot.",
         "richtingen": "N: De tunnel \nW: Ondergronds meer \nZ: Een ander deel van de grot",
         A: "Tunnel",
