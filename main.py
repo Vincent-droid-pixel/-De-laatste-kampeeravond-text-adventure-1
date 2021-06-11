@@ -246,7 +246,8 @@ def print_location():
         print("\n"+"=" * 40)
       #elif-statement kijk of speler al wel in kamer is geweest
       elif kamers[speler.location][Titel] in speler.bezochteKamers:
-        print(kamers[speler.location][Beschrijving2])      
+        print(kamers[speler.location][Beschrijving2]) 
+        print("\n"+"=" * 40)
       tekst="Op deze locatie liggen de volgende items: \n"
       #if-statement kijkt of typemachine animatie aan staat
       if speler.typemachine == "true" and kamers[speler.location][Titel] not in speler.bezochteKamers:
@@ -580,7 +581,17 @@ def quit():
 
 #intro-menu
 def intro():
-  print("====================================================== \nJe bent gezellig met vrienden aan het kamperen in het bos. \nHelaas kon je niet slapen. \nJe dacht: 'laat ik even een boswandeling maken, zodat ik beter kan slapen.' \nHet enige wat je meeneemt is een kompas. \nNa een kwartier te hebben gelopen kom je opeens tot het besef dat je niet meer weet waar je bent! \nJe denkt bij jezelf: ‘ik moet mijn vrienden terugvinden!’ \n======================================================")
+  tekst = "====================================================== \nJe bent gezellig met vrienden aan het kamperen in het bos. \nHelaas kon je niet slapen. \nJe dacht: 'laat ik even een boswandeling maken, zodat ik beter kan slapen.' \nHet enige wat je meeneemt is een kompas. \nNa een kwartier te hebben gelopen kom je opeens tot het besef dat je niet meer weet waar je bent! \nJe denkt bij jezelf: ‘ik moet mijn vrienden terugvinden!’ \n======================================================"
+  #if-statement kijkt of typemachine animatie aan staat
+  if speler.typemachine == "true":
+        for char in (tekst):
+          sys.stdout.write(char)            
+          sys.stdout.flush()
+          time.sleep(0.03)
+      #elif-statement kijkt of typemachine animatie uit staat
+      elif speler.typemachine == "false" or kamers[speler.location][Titel] in speler.bezochteKamers:
+        print(tekst)
+
 
   choice = input(""" Druk op [enter] als je verder wil gaan: """)
   if choice.lower() == "":

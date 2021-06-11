@@ -201,7 +201,7 @@ kamers = {
     },
     "OndergrondsMeer": {
         "titel": "13. Het ondergrondse meer",
-        "beschrijving": "Je loopt naar het ondergrondse meer. Zodra je in het water \nkijkt lijkt het alsof er een andere wereld is onder het \noppervlak. Zodra je het water aanraakt word je erin \ngetrokken. Daarna word je wakker. Het was allemaal een \ndroom... Nadat je je kleding hebt aangedaan kom je uit je \ntent, maar als je om je heen kijkt zie je niet de tenten van\n je vrienden...",
+        "beschrijving": "Je loopt naar het ondergrondse meer. Zodra je in het water \nkijkt lijkt het alsof er een andere wereld is onder het \noppervlak. Zodra je het water aanraakt word je erin \ngetrokken. Daarna word je wakker. Het was allemaal een \ndroom... Nadat je je kleding hebt aangedaan kom je uit je \ntent, maar als je om je heen kijkt zie je niet de tenten van\n je vrienden... \nDruk op [enter] om door te gaan.",
         "beschrijving2": "",
         "richtingen": "",
         A: "OndergrondsMeer",
